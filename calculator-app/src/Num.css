@@ -1,0 +1,13 @@
+* {
+    font-family: sans-serif;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "row1 row1 row1"
+        "row2 row2 row2"
+        "row3 row3 row3"
+        "row4 row4 row4";
+    gap: 0.2rem;
+    margin-bottom: 0.8rem;
+}
