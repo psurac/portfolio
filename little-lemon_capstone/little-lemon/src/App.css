@@ -7,7 +7,69 @@
 }
 
 .App {
+  display: grid;
+  grid-template-areas: "Header
+                        Main
+                        Main
+                        Main
+                        Footer";
   text-align: center;
+  min-height: 100vh;
 }
 
+.Header {
+  grid-area: Header;
+}
 
+.Main {
+  grid-area: Main;
+}
+
+.Footer {
+  grid-area: Footer;
+}
+
+.title {
+  font-size: 64pt;
+  font-family: 'Markazi Text';
+}
+
+.subtitle {
+  font-size: 40pt;
+  font-family: 'Markazi Text';
+}
+
+.leadtext {
+  font-size: 18pt;
+  font-family: 'Karla';
+}
+
+.sectiontitle {
+  font-size: 20pt;
+  font-family: 'Karla';
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.weeksspecial {
+  font-size: 16pt;
+  font-family: 'Karla';
+  font-weight: bold;
+}
+
+.cardtitle {
+  font-size: 18pt;
+  font-family: 'Karla';
+  font-weight: bold;
+}
+
+.paragraph {
+  font-size: 16pt;
+  font-family: 'Karla';
+  line-height: 1.5;
+}
+
+.highlighttext {
+  font-size: 16pt;
+  font-family: 'Karla';
+}
