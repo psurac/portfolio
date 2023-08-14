@@ -17,6 +17,7 @@
                         Footer";
   text-align: center;
   min-height: 100vh;
+  padding: 6vh 10vw 3vh 10vw;
 }
 
 .Header {
@@ -100,7 +101,6 @@ header {
 .header_logo, .header_menu {
   display: inline-flex;
   flex-wrap: wrap;
-  margin: 1rem;
   vertical-align: middle;
 }
 
@@ -122,7 +122,6 @@ footer {
   display: flex;
   flex-flow: row;
   align-items: center;
-  margin: 1rem 0 0 1rem
 }
 
 footer nav ul {

@@ -10,7 +10,6 @@ import Login from './pages/Login.js';
 function Main() {
     return (
         <main>
-            <h1>Main</h1>
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/about" element={<About />} />
