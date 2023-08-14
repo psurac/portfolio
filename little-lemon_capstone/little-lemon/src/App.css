@@ -91,3 +91,47 @@
 .sec2 {
   background-color: #FBDABB;
 }
+
+header {
+  display: inline-flexbox;
+  flex-flow: column wrap;
+}
+
+.header_logo, .header_menu {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  vertical-align: middle;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+
+header nav ul li {
+  display: block;
+  list-style: none;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+footer {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin: 1rem 0 0 1rem
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  list-style: none;
+}
+
+footer > div {
+  margin-right: 4rem;
+}
