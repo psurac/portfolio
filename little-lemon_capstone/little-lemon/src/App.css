@@ -104,6 +104,10 @@ header {
   vertical-align: middle;
 }
 
+.header_menu {
+  padding: 0 5vw 0 5vw;
+}
+
 header nav ul {
   display: flex;
   flex-direction: row;
@@ -114,7 +118,7 @@ header nav ul {
 header nav ul li {
   display: block;
   list-style: none;
-  padding: 10px;
+  margin: 10px;
   white-space: nowrap;
 }
 
