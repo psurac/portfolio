@@ -1,27 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from './pages/Home';
-import About from './pages/About';
-import Menu from './pages/Menu';
-import Reservation from './pages/Reservation';
-import OrderOnline from './pages/OrderOnline';
-import Login from './pages/Login';
+import { Route, Routes } from "react-router-dom";
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import Menu from './pages/Menu.js';
+import Reservation from './pages/Reservation.js';
+import OrderOnline from './pages/OrderOnline.js';
+import Login from './pages/Login.js';
 
 function Main() {
     return (
-            <main>
-                <Router>
-                    <Routes>
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/about" component={About} />
-                        <Route exact path="/menu" component={Menu} />
-                        <Route exact path="/reservation" component={Reservation} />
-                        <Route exact path="/order-online" component={OrderOnline} />
-                        <Route exact path="/login" component={Login} />
-                    </Routes>
-                </Router>
-            </main>
-        );
+        <main>
+            <h1>Main</h1>
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/menu" element={<Menu />} />
+                <Route exact path="/reservation" element={<Reservation />} />
+                <Route exact path="/order-online" element={<OrderOnline />} />
+                <Route exact path="/login" element={<Login />} />
+            </Routes>
+        </main>
+    );
 };
 
 export default Main;
