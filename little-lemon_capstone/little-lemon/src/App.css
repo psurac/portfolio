@@ -7,6 +7,8 @@
 }
 
 .App {
+  color: #333333;
+  background-color: #EDEFEE;
   display: grid;
   grid-template-areas: "Header
                         Main
@@ -72,4 +74,20 @@
 .highlighttext {
   font-size: 16pt;
   font-family: 'Karla';
+}
+
+.prim1 {
+  background-color: #495E57;
+}
+
+.prim2 {
+  background-color: #F4CE14;
+}
+
+.sec1 {
+  background-color: #EE9972;
+}
+
+.sec2 {
+  background-color: #FBDABB;
 }
