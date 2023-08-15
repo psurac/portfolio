@@ -1,0 +1,12 @@
+.hero-flex {
+    display: inline-flex;
+    flex-direction: row;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#hero-image {
+    width: 30vw;
+    position: relative;
+    margin-bottom: -25vh;
+}
