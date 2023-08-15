@@ -91,11 +91,17 @@ footer > div {
   border: 2px solid #333333;
   background-color: #F4CE14;
   border-radius: 16px;
-  padding: 10px;
+  padding: 10px 15px 10px 15px;
   text-align: center;
   align-items: center;
   white-space: nowrap;
   align-self: center;
+  box-shadow: 2px 2px 5px #000;
+}
+
+.lemonButton:focus {
+  background-color: #FBDABB;
+  box-shadow: none;
 }
 
 .title {
