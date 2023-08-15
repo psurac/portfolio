@@ -92,6 +92,7 @@ footer > div {
   background-color: #F4CE14;
   border-radius: 16px;
   padding: 10px 15px 10px 15px;
+  min-width: 180px;
   text-align: center;
   align-items: center;
   white-space: nowrap;
