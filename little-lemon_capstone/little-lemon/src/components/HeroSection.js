@@ -9,9 +9,7 @@ function HeroSection() {
                 <h2 className="subtitle">Chicago</h2>
                 <p className="leadtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-            <div className="image">
-                <img id='hero-image' src={restauranfood} alt="Food served in Little-Lemon" />
-            </div>
+            <img id='hero-image' className="image" src={restauranfood} alt="Food served in Little-Lemon" />
         </div>
     );
 };

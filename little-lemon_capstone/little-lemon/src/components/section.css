@@ -1,12 +1,21 @@
+@media screen and (max-width: 800px) {
+    .hero-flex {
+        flex-wrap: wrap;
+    }
+}
+
 .hero-flex {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
+    gap: 1em;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    justify-content: center;
 }
 
 #hero-image {
     width: 30vw;
     position: relative;
     margin-bottom: -25vh;
+    align-self: center;
 }

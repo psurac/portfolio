@@ -37,18 +37,18 @@
 
 header {
   padding: 3vh 10vw 2vh 10vw;
-  display: inline-flexbox;
-  flex-flow: column wrap;
+  display: flex;
 }
 
 .header_logo, .header_menu {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   vertical-align: middle;
 }
 
 .header_menu {
-  padding: 0 5vw 0 5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 header nav ul {
@@ -59,7 +59,6 @@ header nav ul {
 }
 
 header nav ul li {
-  display: block;
   list-style: none;
   margin: 10px;
   white-space: nowrap;
@@ -81,6 +80,10 @@ footer nav ul {
 
 footer > div {
   margin-right: 4rem;
+}
+
+.image {
+  border-radius: 16px;
 }
 
 .title {
@@ -142,4 +145,19 @@ footer > div {
 
 .sec2 {
   background-color: #FBDABB;
+}
+
+@media screen and (max-width: 800px) {
+  .padd-right-left, header, footer {
+    padding: 2vh 2vw 2vh 2vw;
+  }
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
