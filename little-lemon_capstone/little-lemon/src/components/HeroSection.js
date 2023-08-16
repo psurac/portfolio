@@ -1,9 +1,11 @@
 import restauranfood from '../pictures/restauranfood.jpg';
 import './section.css';
 import Button from './Button';
+import { useSitesContext } from '../context/SitesContext.js';
 
 function HeroSection() {
-    const link = '/reservation';
+    const name = 'Reservation';
+    const link = useSitesContext().find(item => item.name === name).path;
     const buttonText = 'Reserv a Table';
     return (
         <div className="prim1 padd-right-left hero-flex">

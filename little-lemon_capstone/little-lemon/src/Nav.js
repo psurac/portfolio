@@ -1,38 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSitesContext } from './context/SitesContext.js';
 
 function Nav() {
-    const links = [
-        {
-            name: 'Home',
-            path: '/'
-        },
-        {
-            name: 'About',
-            path: '/about'
-        },
-        {
-            name: 'Menu',
-            path: '/menu'
-        },
-        {
-            name: 'Reservation',
-            path: '/reservation'
-        },
-        {
-            name: 'Order Online',
-            path: '/order-online'
-        },
-        {
-            name: 'Login',
-            path: '/login'
-        },
-    ]
+    const sites = useSitesContext();
     return (
         <nav>
             <ul>
-                {links.map( ({name, path}) => (
-                    <li><Link to="path">{name}</Link></li>
+                {sites.map( ({name, path}) => (
+                    <li key="name"><Link to={path}>{name}</Link></li>
                 ))}
             </ul>
         </nav>

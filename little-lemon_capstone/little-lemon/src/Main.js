@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from "react-router-dom";
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import Menu from './pages/Menu.js';
-import Reservation from './pages/Reservation.js';
-import OrderOnline from './pages/OrderOnline.js';
-import Login from './pages/Login.js';
+import { useSitesContext } from './context/SitesContext.js';
 
 function Main() {
+    const sites = useSitesContext();
     return (
         <main>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/about" element={<About />} />
-                <Route exact path="/menu" element={<Menu />} />
-                <Route exact path="/reservation" element={<Reservation />} />
-                <Route exact path="/order-online" element={<OrderOnline />} />
-                <Route exact path="/login" element={<Login />} />
+                {sites.map( ({name, path}) => {
+                    const compCapital = name.charAt(0).toUpperCase() + name.slice(1);
+                    const comp = compCapital.replace(/\s+/g, '');
+                    const Component = lazy( () => import(`./pages/${comp}`));
+                return (
+                    <Route key={name} exact path={path} element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Component />
+                        </Suspense>
+                    } />
+                )})}
             </Routes>
         </main>
     );
