@@ -61,4 +61,11 @@
     #hero-image {
         width: 60vw;
     }
+    .grid-ss {
+        display: grid;
+        grid-template-areas: 
+            "title title"
+            "button button"
+            "specials special";
+    }
 }
