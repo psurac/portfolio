@@ -1,3 +1,29 @@
+.grid-ss {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+        "title button"
+        "specials specials";
+    row-gap: 5vh;
+    margin-top: 27vh;
+    margin-bottom: 2vh;
+}
+
+.grid-ss > h1 {
+    grid-area: title;
+    align-self: left;
+}
+
+.grid-ss > button {
+    grid-area: button;
+    justify-self: end;
+}
+
+.grid-ss >.specials-container {
+    grid-area: specials;
+    display: flex;
+}
+
 .hero-flex {
     display: flex;
     flex-direction: row;

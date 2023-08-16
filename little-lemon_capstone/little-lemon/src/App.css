@@ -93,6 +93,7 @@ footer > div {
   border-radius: 16px;
   padding: 10px 15px 10px 15px;
   min-width: 180px;
+  max-width: 250px;
   text-align: center;
   align-items: center;
   white-space: nowrap;
