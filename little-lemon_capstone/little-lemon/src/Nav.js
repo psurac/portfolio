@@ -2,15 +2,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav() {
+    const links = [
+        {
+            name: 'Home',
+            path: '/'
+        },
+        {
+            name: 'About',
+            path: '/about'
+        },
+        {
+            name: 'Menu',
+            path: '/menu'
+        },
+        {
+            name: 'Reservation',
+            path: '/reservation'
+        },
+        {
+            name: 'Order Online',
+            path: '/order-online'
+        },
+        {
+            name: 'Login',
+            path: '/login'
+        },
+    ]
     return (
         <nav>
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/menu">Menu</Link></li>
-                <li><Link to="/reservation">Reservation</Link></li>
-                <li><Link to="/order-online">Order Online</Link></li>
-                <li><Link to="/login">Login</Link></li>
+                {links.map( ({name, path}) => (
+                    <li><Link to="path">{name}</Link></li>
+                ))}
             </ul>
         </nav>
     );
