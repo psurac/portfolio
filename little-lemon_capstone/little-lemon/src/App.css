@@ -46,10 +46,10 @@ header {
   vertical-align: middle;
 }
 
-.header_menu {
+/* .header_menu {
   padding-left: 5vw;
   padding-right: 5vw;
-}
+} */
 
 header nav ul {
   display: flex;
@@ -171,7 +171,7 @@ footer > div {
 
 @media screen and (max-width: 800px) {
   .padd-right-left, header, footer {
-    padding: 2vh 3vw 2vh 3vw;
+    padding: 2vh 4vw 2vh 4vw;
   }
   header {
     flex-wrap: wrap;
@@ -181,5 +181,13 @@ footer > div {
   header nav ul {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .title {
+    font-size: 52pt;
+  }
+  
+  .subtitle {
+    font-size: 32pt;
   }
 }

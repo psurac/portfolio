@@ -8,7 +8,6 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 0.2fr 0.3fr 0.2fr;
     width: 20rem;
-    max-height: 15rem;
     border-radius: 16px;
     box-shadow: 2px 2px 5px #000;
     row-gap: 3px;
@@ -32,7 +31,8 @@
 
 .special p {
     grid-area: description;
-    overflow: hidden;
+    max-height: 60px;
+    overflow-y: scroll;
 }
 
 .special span {
@@ -43,8 +43,8 @@
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-areas: 
-        "title button"
-        "specials specials";
+        "title title button"
+        "specials specials specials";
     row-gap: 5vh;
     margin-top: 27vh;
     margin-bottom: 2vh;
@@ -65,15 +65,24 @@
     display: flex;
     gap: 2rem;
     max-width: 95vw;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
 @media screen and (max-width: 800px) {
 
+    .special {
+        display: grid;
+        grid-template-areas: 
+            "img img"
+            "title title"
+            "price price"
+            "order order";
+    }
+
     .special p {
-        visibility: hidden;
+        display: none;
     }
 
     .grid-ss {
@@ -81,8 +90,9 @@
         grid-template-areas: 
             "title title"
             "button button"
-            "specials special";
+            "specials specials";
         justify-content: center;
+        align-items: center;
     }
     .grid-ss > button {
         justify-self: center;

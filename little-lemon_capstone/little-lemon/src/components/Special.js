@@ -16,7 +16,7 @@ function Special({ dish }) {
         <div className="special sec2">
             <img className='image' src={image} alt={dish.name} />
             <h3 className="cardtitle">{dish.name}</h3>
-            <h4 className="highlighttext">{dish.price}</h4>
+            <h4 className="highlighttext">${dish.price}</h4>
             <p className="weeksspecial">{dish.description}</p>
             <span>Order</span>
         </div>

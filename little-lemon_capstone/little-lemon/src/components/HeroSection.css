@@ -30,13 +30,14 @@
 
 @media screen and (max-width: 800px) {
     .hero-flex {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
     }
 
     #hero-image {
         width: 60vw;
     }
-    
+
     .hero-text {
         width: 60vw;
     }
