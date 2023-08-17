@@ -9,7 +9,7 @@ export const MenuProvider = ({ children }) => {
             special: true,
             name: 'Greek Salad',
             price: 12.99,
-            image: '../pictures/greek_salad.jpg',
+            image: 'greek_salad.jpg',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         },
         {
@@ -17,7 +17,7 @@ export const MenuProvider = ({ children }) => {
             special: true,
             name: 'Pizza Lemon',
             price: 14.99,
-            image: '../pictures/pizza_lemon.jpg',
+            image: 'pizza_lemon.jpeg',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         },
         {
@@ -25,7 +25,7 @@ export const MenuProvider = ({ children }) => {
             special: true,
             name: 'Lemon Desert',
             price: 8.99,
-            image: '../pictures/lemon_dessert.jpg',
+            image: 'lemon_dessert.jpg',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         },
         {
@@ -33,7 +33,7 @@ export const MenuProvider = ({ children }) => {
             special: false,
             name: 'Pizza Fungi',
             price: 13.99,
-            image: '../pictures/pizza_lemon.jpg',
+            image: 'pizza_lemon.jpeg',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         },
         {
@@ -41,7 +41,7 @@ export const MenuProvider = ({ children }) => {
             special: false,
             name: 'Pizza Lemon',
             price: 14.99,
-            image: '../pictures/pizza_lemon.jpg',
+            image: 'pizza_lemon.jpeg',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip',
         },
     ]

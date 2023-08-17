@@ -1,4 +1,4 @@
-import Logo from './pictures/logo_big.png';
+import Logo from './images/logo_big.png';
 import Nav from './Nav.js';
 
 function Footer() {

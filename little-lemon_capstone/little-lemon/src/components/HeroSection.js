@@ -1,4 +1,4 @@
-import restauranfood from '../pictures/restauranfood.jpg';
+import restauranfood from '../images/restauranfood.jpg';
 import './section.css';
 import Button from './Button';
 import { useSitesContext } from '../context/SitesContext.js';
