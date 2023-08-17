@@ -13,7 +13,7 @@ function Special({ dish }) {
     }, [dish.image]);
 
     return (
-        <div className="special sec1">
+        <div className="special sec2">
             <img className='image' src={image} alt={dish.name} />
             <h3 className="cardtitle">{dish.name}</h3>
             <h4 className="highlighttext">{dish.price}</h4>

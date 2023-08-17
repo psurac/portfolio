@@ -11,6 +11,7 @@
     max-height: 15rem;
     border-radius: 16px;
     box-shadow: 2px 2px 5px #000;
+    row-gap: 3px;
 }
 
 .special img {
@@ -26,6 +27,7 @@
 
 .special h4 {
     grid-area: price;
+    color: #EE9972;
 }
 
 .special p {
@@ -62,12 +64,24 @@
     grid-area: specials;
     display: flex;
     gap: 2rem;
-    max-width: 100vw;
+    max-width: 95vw;
     overflow-x: scroll;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 @media screen and (max-width: 800px) {
+
+    .special p {
+        visibility: hidden;
+    }
+
     .grid-ss {
+        display: grid;
+        grid-template-areas: 
+            "title title"
+            "button button"
+            "specials special";
         justify-content: center;
     }
     .grid-ss > button {
