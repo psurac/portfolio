@@ -2,6 +2,7 @@ import Button from "./Button.js";
 import { useSitesContext } from '../context/SitesContext.js';
 import { useMenu } from "../context/MenuContext.js";
 import Special from "./Special.js";
+import './SpecialSection.css';
 
 function SpecialsSection() {
     const name = 'Menu';

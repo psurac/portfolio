@@ -1,5 +1,5 @@
 import restauranfood from '../images/restauranfood.jpg';
-import './section.css';
+import './HeroSection.css';
 import Button from './Button';
 import { useSitesContext } from '../context/SitesContext.js';
 
