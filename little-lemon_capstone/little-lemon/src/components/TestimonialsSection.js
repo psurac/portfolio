@@ -1,7 +1,11 @@
+import './TestimonialsSection.css'
+import { useTestimonials } from '../context/TestimonialsContext.js';
+import Testimonial from './Testimonial.js';
+
 function TestimonialsSection() {
     return (
-        <div>
-            <h1>Testimonial</h1>
+        <div className='prim1 testi-flex'>
+            {useTestimonials().map(item => <Testimonial testi={item} />)}
         </div>
     );
 };
