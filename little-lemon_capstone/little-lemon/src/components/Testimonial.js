@@ -11,13 +11,14 @@ function Testimonial({ testi }) {
         }
 
         loadImage();
-    }, [testi.image]);
+    }, [testi]);
 
     return (
         <div className="testimonial">
             <img className="img" src={image} alt={testi.name} />
             <h3 className="cardtitle">{testi.name}</h3>
-            <div className="rating">{testi.rating}</div>
+            <div className="rating">{Array.from({length: testi.rating}).map( () => (
+                <span>&#9733;</span>))}</div>
         </div>
     );
 };

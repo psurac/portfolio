@@ -7,11 +7,11 @@ function Special({ dish }) {
         async function loadImage() {
             import(`../images/${dish.image}`)
             .then( (importImage) => setImage(importImage.default))
-            .catch( error => console.log(`Error in ${dish.name} by loading Image`, error));
+            .catch( (error) => console.log(`Error in ${dish.name} by loading Image`, error));
         }
 
         loadImage();
-    }, [dish.image]);
+    }, [dish]);
 
     return (
         <div className="special sec2">
