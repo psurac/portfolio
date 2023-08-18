@@ -84,7 +84,7 @@ footer > div {
 
 .image {
   border-radius: 16px;
-  box-shadow: 2px 2px 5px #000;
+  /* box-shadow: 2px 2px 5px #000; */
 }
 
 .lemonButton {
@@ -167,6 +167,11 @@ footer > div {
 
 .sec2 {
   background-color: #FBDABB;
+}
+
+.sec3 {
+  background-color: #EDEFEE;
+  color: #495E57;
 }
 
 @media screen and (max-width: 800px) {
