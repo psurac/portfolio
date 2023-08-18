@@ -65,10 +65,11 @@ header nav ul li {
 }
 
 footer {
-  padding: 2vh 10vw 3vh 10vw;
+  padding: 5vh 10vw 5vh 10vw;
   display: flex;
   flex-flow: row;
   align-items: center;
+  border-top: #F4CE14 solid;
 }
 
 footer nav ul {

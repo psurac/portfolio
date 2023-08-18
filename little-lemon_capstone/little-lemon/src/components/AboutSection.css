@@ -9,17 +9,38 @@
 }
 
 .about-text {
-    flex: 0 0 40vw;
-    width: 40vw;
+    flex: 0 0 35vw;
+    width: 35vw;
+    color: #333333;
 }
 
 .about-img {
     flex: 0 0 40vw;
     width: 40vw;
+    margin: 15px;
+    align-items: center;
 }
 
 .about-img img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
+}
+
+.about-img > :first-child {
+    position: relative;
+    z-index: 2;
+    top: 3vh;
+    left: 0;
+}
+
+.about-img > :nth-child(2) {
+    position: relative;
+    z-index: 1;
+    top: -3vh;
+    left: 5vw;
+}
+
+.about-text p {
+    text-align: justify;
 }

@@ -7,11 +7,11 @@
     justify-content: center;
 }
 
-.title {
+.hero-text .title {
     color: #F4CE14;
 }
 
-.subtitle {
+.hero-text .subtitle {
     color: #FBDABB;
 }
 
