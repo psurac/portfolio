@@ -1,7 +1,9 @@
+import AboutSection from '../components/AboutSection.js';
+
 function About() {
     return (
         <div>
-            <h1>About</h1>
+            <AboutSection />
         </div>
     );
 };

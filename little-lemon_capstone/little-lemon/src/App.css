@@ -36,8 +36,9 @@
 }
 
 header {
-  padding: 3vh 10vw 2vh 10vw;
+  padding: 4vh 10vw 4vh 10vw;
   display: flex;
+  border-bottom: #333333 solid;
 }
 
 .header_logo, .header_menu {
