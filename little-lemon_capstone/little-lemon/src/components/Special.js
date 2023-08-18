@@ -5,8 +5,9 @@ function Special({ dish }) {
     const [image, setImage] = useState(null);
     useEffect(() => {
         async function loadImage() {
-            const importImage = (await import(`../images/${dish.image}`)).default;
-            setImage(importImage);
+            import(`../images/${dish.image}`)
+            .then( (importImage) => setImage(importImage.default))
+            .catch( error => console.log(`Error in ${dish.name} by loading Image`, error));
         }
 
         loadImage();
