@@ -175,9 +175,10 @@ footer > div {
 }
 
 @media screen and (max-width: 800px) {
-  .padd-right-left, header, footer {
-    padding: 2vh 4vw 2vh 4vw;
-  }
+  /* .padd-right-left, header, footer {
+    padding: 2vh 6vw 2vh 6vw;
+  } */
+
   header {
     flex-wrap: wrap;
     justify-content: center;

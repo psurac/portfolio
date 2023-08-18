@@ -60,7 +60,6 @@
 
 .grid-ss > button {
     grid-area: button;
-    justify-self: end;
 }
 
 .grid-ss >.specials-container {
@@ -76,13 +75,12 @@
 @media screen and (max-width: 800px) {
 
     .grid-ss {
-        display: grid;
+        grid-template-columns: auto;
         grid-template-areas: 
             "title title"
             "button button"
             "specials specials";
-        justify-content: center;
-        align-items: center;
+        text-align: center;
     }
     .grid-ss > button {
         justify-self: center;
