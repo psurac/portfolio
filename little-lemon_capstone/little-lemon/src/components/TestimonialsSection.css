@@ -1,0 +1,26 @@
+.testi-flex {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "img name"
+        "img rating"
+        "text text";
+    gap: 3px;
+    padding: 1rem;
+    max-width: 20vw;
+}
+
+.testimonial-grid .img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

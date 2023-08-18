@@ -6,19 +6,19 @@ export const TestimonialsProvider = ({ children }) => {
     const testimonials = [
         {
             name: 'Anna',
-            image: 'anna.jpg',
+            image: 'anna.jpeg',
             rating: 5,
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, quasi, quod, quibusdam.',
         },
         {
             name: 'Mary',
-            image:'mary.jpg',
+            image:'mary.jpeg',
             rating: 4,
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, quasi, quod, quibusdam.',
         },
         {
-            name: 'John',
-            image: 'john.jpg',
+            name: 'Jesus',
+            image: 'jesus.jpeg',
             rating: 3,
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, quasi, quod, quibusdam.',
         },
