@@ -17,8 +17,8 @@ function Testimonial({ testi }) {
         <div className="sec3 testimonial-grid">
             <img className="image" src={image} alt={testi.name} />
             <h3 className="cardtitle">{testi.name}</h3>
-            <div className="rating">{Array.from({length: testi.rating}).map( () => (
-                <span>&#9733;</span>))}
+            <div className="rating">{Array.from({length: testi.rating}).map( (_, index) => (
+                <span key={index}>&#9733;</span>))}
             </div>
             <p className="highlighttext testi-text">{testi.text}</p>
         </div>

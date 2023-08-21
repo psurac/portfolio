@@ -8,7 +8,7 @@ function Nav() {
         <nav>
             <ul>
                 {sites.map( ({name, path}) => (
-                    <li key="name"><Link to={path}>{name}</Link></li>
+                    <li key={name}><Link to={path}>{name}</Link></li>
                 ))}
             </ul>
         </nav>
