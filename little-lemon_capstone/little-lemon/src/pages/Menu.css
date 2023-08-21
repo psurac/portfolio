@@ -1,0 +1,56 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.category {
+    text-align: center;
+    border-bottom: #333333 1px solid;
+}
+
+.category:first-child {
+    background-color: #495E57;
+    color: #EDEFEE;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.dish {
+    display: grid;
+    grid-template-areas: 
+        "name price"
+        "description description";
+}
+
+.name {
+    grid-area: name;
+}
+
+.price {
+    grid-area: price;
+    text-align: end;
+}
+
+.description {
+    grid-area: description;
+    max-height: 1.5rem;
+    overflow-y: hidden;
+    border-top: #495E57 1px dashed;
+}
+
+.description:active {
+    overflow-y: visible;
+    max-height: none;
+}
+
+.button {
+    justify-self: center;
+}
