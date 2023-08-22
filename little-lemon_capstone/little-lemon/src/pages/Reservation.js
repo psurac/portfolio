@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Restaurant from '../images/restaurant.jpg';
 
 function Reservation() {
     const [datetimeNow, setDatetimeNow] = useState();
@@ -6,7 +7,8 @@ function Reservation() {
 
     useEffect(() => {
         const now = new Date();
-        const max = new Date(now.getDate() + 7);
+        const max = new Date();
+        max.setDate(now.getDate() + 7);
 
         const formateDatetime = (date) => {
             const year = date.getFullYear();
@@ -25,6 +27,7 @@ function Reservation() {
         <div>
             <div className="reserve">
                 <h1 className="title">Reserve a Table</h1>
+                <img src={Restaurant} alt="restaurant" className='image' height="300px" />
                 <form className="reserv">
                     <i className="icon"></i>
                     <select id="ocasion">
@@ -37,11 +40,13 @@ function Reservation() {
                     <input 
                         id="datetime" 
                         type="datetime-local" 
-                        step="1800"
-                        value={datetimeNow}
+                        step="3600"
+                        defaultValue={datetimeNow}
                         min={datetimeNow}
                         max={datetimeMax}
                     />
+                    <input id="email" type="email" />
+                    <input className='lemonButton' type="submit" value="Reserve" />
                 </form>
             </div>
         </div>
