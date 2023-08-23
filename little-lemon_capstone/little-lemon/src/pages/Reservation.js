@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Restaurant from '../images/restaurant.jpg';
+import './Reservation.css'
 
 function Reservation() {
     const [datetimeNow, setDatetimeNow] = useState();
@@ -25,10 +26,10 @@ function Reservation() {
 
     return (
         <div>
-            <div className="reserve">
+            <div className="reserveation padd-right-left prim1">
                 <h1 className="title">Reserve a Table</h1>
-                <img src={Restaurant} alt="restaurant" className='image' height="300px" />
-                <form className="reserv">
+                <img src={Restaurant} alt="restaurant" className='image' />
+                <form className="reserve">
                     <i className="icon"></i>
                     <select id="ocasion">
                         <option value="ocasion" selected>Ocasion</option>
@@ -40,7 +41,7 @@ function Reservation() {
                     <input 
                         id="datetime" 
                         type="datetime-local" 
-                        step="3600"
+                        step="1800"
                         defaultValue={datetimeNow}
                         min={datetimeNow}
                         max={datetimeMax}

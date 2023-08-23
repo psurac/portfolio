@@ -1,0 +1,49 @@
+.reserveation {
+    display: grid;
+    grid-template-areas: 
+        "title title"
+        "reserve image";
+    gap: 25px;
+    padding-top: 4vh;
+    padding-bottom: 6vh;
+}
+
+.title {
+    grid-area: title;
+    text-align: center;
+    color: #F4CE14;
+}
+
+.reserve {
+    grid-area: reserve;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.reserve input, select {
+    align-self: left;
+    border: 2px #F4CE14 solid;
+    border-radius: 16px;
+    padding: 4px;
+}
+
+.image {
+    grid-area: image;
+    align-self: flex-end;
+    justify-self: right;
+    width: 40vw;
+}
+
+@media screen and (max-width: 800px) {
+    .reserveation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image {
+        width: 80vw;
+        align-self: center;
+    }
+}
