@@ -47,10 +47,13 @@ header {
   vertical-align: middle;
 }
 
-/* .header_menu {
-  padding-left: 5vw;
-  padding-right: 5vw;
-} */
+.header_menu {
+  margin-left: 1vw;
+}
+
+nav {
+  margin-left: 3vw;
+}
 
 header nav ul {
   display: flex;
