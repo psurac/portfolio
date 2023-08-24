@@ -24,12 +24,17 @@ function Reservation() {
         setDatetimeMax(formateDatetime(max));
     }, []);
 
+    const submit = (event) => {
+        event.preventDefault();
+        event.target.submit();
+    }
+
     return (
         <div>
             <div className="reserveation padd-right-left prim1">
                 <h1 className="title">Reserve a Table</h1>
                 <img src={Restaurant} alt="restaurant" className='image' />
-                <form className="reserve">
+                <form className="reserve" onSubmit={submit} action='/reservation'>
                     <i className="icon"></i>
                     <select id="ocasion">
                         <option value="ocasion" selected>Ocasion</option>
@@ -38,16 +43,38 @@ function Reservation() {
                         <option value="engagement">Engagement</option>
                         <option value="anniversary">Anniversary</option>
                     </select>
-                    <input 
-                        id="datetime" 
-                        type="datetime-local" 
-                        step="1800"
-                        defaultValue={datetimeNow}
-                        min={datetimeNow}
-                        max={datetimeMax}
+                    <div className='date-input'>
+                        <input
+                            id="datetime"
+                            type="datetime-local"
+                            step="1800"
+                            defaultValue={datetimeNow}
+                            min={datetimeNow}
+                            max={datetimeMax}
+                            required
+                        />
+                        <label className="open-hours" htmlFor='datetime'>
+                            Opening hours from 1pm to 11pm
+                        </label>
+                    </div>
+
+                    <input
+                        id='name'
+                        type='text'
+                        placeholder='Name'
+                        required
                     />
-                    <input id="email" type="email" />
-                    <input className='lemonButton' type="submit" value="Reserve" />
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder='Email address'
+                        required
+                    />
+                    <input
+                        className='lemonButton'
+                        type="submit"
+                        value="Reserve"
+                    />
                 </form>
             </div>
         </div>

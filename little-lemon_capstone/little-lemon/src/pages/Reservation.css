@@ -2,6 +2,7 @@
     display: grid;
     grid-template-areas: 
         "title title"
+        "stitle stitle"
         "reserve image";
     gap: 25px;
     padding-top: 4vh;
@@ -14,11 +15,19 @@
     color: #F4CE14;
 }
 
+.open-hours {
+    grid-area: stitle;
+    text-align: center;
+    color: #F4CE14;
+    font-size: 10px;
+    margin: none;
+}
+
 .reserve {
     grid-area: reserve;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 17px;
     justify-content: center;
 }
 
@@ -29,11 +38,16 @@
     padding: 4px;
 }
 
+.date-input {
+    display: flex;
+    flex-direction: column;
+}
+
 .image {
     grid-area: image;
     align-self: flex-end;
     justify-self: right;
-    width: 40vw;
+    width: 42vw;
 }
 
 @media screen and (max-width: 800px) {
