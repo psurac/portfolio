@@ -26,8 +26,16 @@ function Reservation() {
 
     const submit = (event) => {
         event.preventDefault();
-        event.target.submit();
-    }
+
+        const formData = new FormData(event.target);
+        const hours = formData.get('datetime').split('T')[1].split(':')[0];
+        if (hours >= 13 && hours < 23) {
+            alert('Please check your Mailbox and confirm!');
+            event.target.submit();
+        } else {
+            alert('Opening hours from 1pm to 11pm');
+        }
+    };
 
     return (
         <div>
@@ -36,8 +44,8 @@ function Reservation() {
                 <img src={Restaurant} alt="restaurant" className='image' />
                 <form className="reserve" onSubmit={submit} action='/reservation'>
                     <i className="icon"></i>
-                    <select id="ocasion">
-                        <option value="ocasion" selected>Ocasion</option>
+                    <select id="ocasion" defaultValue="ocasion">
+                        <option value="ocasion">Ocasion</option>
                         <option value="casual">Casual</option>
                         <option value="birthday">Birthday</option>
                         <option value="engagement">Engagement</option>
@@ -46,6 +54,7 @@ function Reservation() {
                     <div className='date-input'>
                         <input
                             id="datetime"
+                            name='datetime'
                             type="datetime-local"
                             step="1800"
                             defaultValue={datetimeNow}
@@ -57,15 +66,16 @@ function Reservation() {
                             Opening hours from 1pm to 11pm
                         </label>
                     </div>
-
                     <input
                         id='name'
+                        name='name'
                         type='text'
                         placeholder='Name'
                         required
                     />
                     <input
                         id="email"
+                        name='email'
                         type="email"
                         placeholder='Email address'
                         required
