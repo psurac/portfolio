@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fdffdf;
+}
+
+#content {
+    margin-bottom: 3rem;
+}
+
+.container p {
+    text-align: justify;
+}
+
+#cards > :nth-child(2n+1) {
+    background-color: #f4dbdb;
+}
+
+#cards > :nth-child(2n) {
+    background-color: #e0ddff;
+}
