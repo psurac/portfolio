@@ -51,7 +51,7 @@ header {
   position: fixed;
   top: 0;
   background-color: var(--sec3);
-  z-index: 2;
+  z-index: 3;
   width: 100%;
 }
 
@@ -83,7 +83,7 @@ header nav ul li {
 }
 
 main {
-  padding-top: 14vh;
+  padding-top: 5rem;
 }
 
 footer {
@@ -108,13 +108,12 @@ footer > div {
 .shopping-card {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 280px;
   position: fixed;
-  right: -100%;
-  padding: 2rem;
+  right: 0;
   background-color: var(--sec4);
   color: var(--sec1);
-  z-index: 3;
+  z-index: 4;
 }
 
 .image {
@@ -217,6 +216,8 @@ footer > div {
   header {
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   header nav ul {
@@ -224,10 +225,14 @@ footer > div {
     justify-content: center;
   }
 
+  main {
+    padding-top: 6rem;
+  }
+
   .title {
     font-size: 52pt;
   }
-  
+
   .subtitle {
     font-size: 32pt;
   }
