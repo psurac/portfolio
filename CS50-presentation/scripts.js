@@ -1,4 +1,4 @@
-const data = [
+/* data = [
     { week: 0, lab: '-', projects: 'Scratch', language: 'Scratch', img: '#', description: '...' },
     { week: 1, lab: 'Population', projects: 'Hello, Mario (More), Credit', language: 'C', img: '#', description: '...', },
     { week: 2, lab: 'Scrabble', projects: 'Readability, Wordle', language: 'C', img: '#', description: '...', },
@@ -8,9 +8,11 @@ const data = [
     { week: 6, lab: 'World Cup', projects: 'Sentimental / Hello, Sentimental / Mario (More), Sentimental / Credit, Sentimental / Readability, DNA', language: 'Python', img: '#', description: '...', },
     { week: 7, lab: 'Songs', projects: 'Movies, Fiftyville', language: 'SQL', img: '#', description: '...', },
     { week: 8, lab: 'Trivia', projects: 'Homepage', language: 'HTML, CSS, Javascript, Bootstrap', img: '#', description: '...', },
-];
+]; */
+
 
 document.addEventListener('DOMContentLoaded', function () {
+
     function dataLoading(data) {
         const tBody = document.querySelector('#overview_table tbody');
         const cards = document.querySelector('#cards');
@@ -91,5 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    dataLoading(data);
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            dataLoading(data);
+        })
+        .catch(err => {
+            console.error('Error fetching or parsing JSON: ', err.massage);
+        })
 });
