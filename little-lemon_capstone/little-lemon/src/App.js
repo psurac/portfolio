@@ -1,4 +1,5 @@
 import './App.css';
+import ShoppingCard from './components/ShoppingCard';
 import Header from './Header.js';
 import Main from './Main';
 import Footer from './Footer';
@@ -14,8 +15,9 @@ function App() {
         <MenuProvider>
           <TestimonialsProvider>
             <div className="App">
+              <ShoppingCard />
               <Header className="Header " />
-              <Main className="Main" />
+              <Main className="Main main" />
               <Footer className="Footer" />
             </div>
           </TestimonialsProvider>

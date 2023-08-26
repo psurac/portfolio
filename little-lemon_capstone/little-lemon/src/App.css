@@ -6,9 +6,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --prim1: #495E57;
+  --prim2: #F4CE14;
+  --sec1: #EE9972;
+  --sec2: #FBDABB;
+  --sec3: #EDEFEE;
+  --sec4: #333333;
+}
+
 .App {
-  color: #333333;
-  background-color: #EDEFEE;
+  color: var(--sec4);
+  background-color: var(--sec3);
   display: grid;
   grid-template-areas: "Header
                         Main
@@ -38,7 +47,12 @@
 header {
   padding: 4vh 10vw 4vh 10vw;
   display: flex;
-  border-bottom: #333333 solid;
+  border-bottom: var(--sec4) solid;
+  position: fixed;
+  top: 0;
+  background-color: var(--sec3);
+  z-index: 2;
+  width: 100%;
 }
 
 .header_logo, .header_menu {
@@ -68,12 +82,16 @@ header nav ul li {
   white-space: nowrap;
 }
 
+main {
+  padding-top: 14vh;
+}
+
 footer {
   padding: 5vh 10vw 5vh 10vw;
   display: flex;
   flex-flow: row;
   align-items: center;
-  border-top: #F4CE14 solid;
+  border-top: var(--prim2) solid;
 }
 
 footer nav ul {
@@ -87,6 +105,18 @@ footer > div {
   margin-right: 4rem;
 }
 
+.shopping-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  position: fixed;
+  right: -100%;
+  padding: 2rem;
+  background-color: var(--sec4);
+  color: var(--sec1);
+  z-index: 3;
+}
+
 .image {
   border-radius: 16px;
   /* box-shadow: 2px 2px 5px #000; */
@@ -94,8 +124,8 @@ footer > div {
 
 .lemonButton {
   display: inline-block;
-  border: 2px solid #333333;
-  background-color: #F4CE14;
+  border: 2px solid var(--sec4);
+  background-color: var(--prim2);
   border-radius: 16px;
   padding: 10px 15px 10px 15px;
   min-width: 180px;
@@ -108,7 +138,7 @@ footer > div {
 }
 
 .lemonButton:focus {
-  background-color: #FBDABB;
+  background-color: var(--sec2);
   box-shadow: none;
 }
 
@@ -158,25 +188,25 @@ footer > div {
 }
 
 .prim1 {
-  background-color: #495E57;
-  color: #EDEFEE;
+  background-color: var(--prim1);
+  color: var(--sec3);
 }
 
 .prim2 {
-  background-color: #F4CE14;
+  background-color: var(--prim2);
 }
 
 .sec1 {
-  background-color: #EE9972;
+  background-color: var(--sec1);
 }
 
 .sec2 {
-  background-color: #FBDABB;
+  background-color: var(--sec2);
 }
 
 .sec3 {
-  background-color: #EDEFEE;
-  color: #495E57;
+  background-color: var(--sec3);
+  color: var(--prim1);
 }
 
 @media screen and (max-width: 800px) {
