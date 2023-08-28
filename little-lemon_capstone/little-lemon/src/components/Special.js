@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './SpecialSection.css';
+import './Special.css';
 
 function Special({ dish }) {
     const [image, setImage] = useState(null);

@@ -32,7 +32,7 @@
   grid-area: Header;
 }
 
-.Main {
+.main {
   grid-area: Main;
 }
 
@@ -47,7 +47,7 @@
 header {
   padding: 4vh 10vw 4vh 10vw;
   display: flex;
-  border-bottom: var(--sec4) solid;
+  /* border-bottom: var(--sec4) solid; */
   position: fixed;
   top: 0;
   background-color: var(--sec3);
@@ -83,7 +83,7 @@ header nav ul li {
 }
 
 main {
-  padding-top: 5rem;
+  margin-top: 7rem;
 }
 
 footer {
@@ -223,10 +223,6 @@ footer > div {
   header nav ul {
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  main {
-    padding-top: 6rem;
   }
 
   .title {

@@ -1,0 +1,43 @@
+.special {
+    flex: 0 0 20rem;
+    display: grid;
+    grid-template-areas: 
+        "img img"
+        "title price"
+        "description description"
+        "order order";
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 0.2fr 0.3fr 0.2fr;
+    width: 20rem;
+    border-radius: 16px;
+    /* box-shadow: 2px 2px 5px #000; */
+    row-gap: 3px;
+}
+
+.special img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.special h3 {
+    grid-area: title;
+}
+
+.special h4 {
+    grid-area: price;
+    color: #EE9972;
+}
+
+.special p {
+    grid-area: description;
+    max-height: 60px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.special span {
+    grid-area: order;
+}

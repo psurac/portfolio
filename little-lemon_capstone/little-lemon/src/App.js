@@ -17,7 +17,7 @@ function App() {
             <div className="App">
               <ShoppingCard />
               <Header className="Header " />
-              <Main className="Main main" />
+              <Main className="main" />
               <Footer className="Footer" />
             </div>
           </TestimonialsProvider>
