@@ -15,15 +15,16 @@
     align-self: left;
 }
 
-.grid-ss > button {
+.grid-ss > .button {
     grid-area: button;
+    padding-right: 10vw;
 }
 
 .grid-ss >.specials-container {
     grid-area: specials;
     display: flex;
     gap: 2rem;
-    max-width: 95vw;
+    max-width: 100vw;
     overflow-x: auto;
     padding-top: 1rem;
     padding-bottom: 1rem;

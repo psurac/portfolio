@@ -10,10 +10,12 @@ function SpecialsSection() {
     const menu = useMenu();
 
     return (
-        <div className="grid-ss padd-right-left">
-            <h1 className="sectiontitle">Specials</h1>
-            <Button link={link} buttonText={name} />
-            <div className="specials-container">
+        <div className="grid-ss">
+            <h1 className="sectiontitle padd-right-left">Specials</h1>
+            <div className="button">
+                <Button link={link} buttonText={name} />
+            </div>
+            <div className="specials-container padd-right-left">
                 {menu.map(item => item.special ? <Special dish={item} key={item.id} /> : null)}
             </div>
         </div>
