@@ -47,7 +47,7 @@
 header {
   padding: 4vh 10vw 4vh 10vw;
   display: flex;
-  /* border-bottom: var(--sec4) solid; */
+  border-bottom: var(--sec4) solid;
   position: fixed;
   top: 0;
   background-color: var(--sec3);

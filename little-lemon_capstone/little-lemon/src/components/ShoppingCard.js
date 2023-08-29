@@ -1,20 +1,22 @@
 import { useShoppingCard } from "../context/ShopingCardContext";
 
 function ShoppingCard() {
-    const { card = [], dispatch } = useShoppingCard();
-
+    const { card, addToCard, deleteFromCard, cloneCard } = useShoppingCard();
+    
     return (
         <div className="shopping-card">
-            {card.length !== 0 ? card.forEach((item, index) => (
-                <div className="meal">
+            {Array.isArray(card) && card.length ? card.map((item, index) => (
+                <div className="meal" key={index}>
                     <h6>{item.name}</h6>
                     <h6>{item.price}</h6>
                     <div
                         className="lemonButton"
-                        onClick={null}
+                        /* onClick={deleteFromCard(index)} */
                     >X</div>
                 </div>
-            )) : null}
+            )) : (
+                <span>Nothing selected</span>
+            )}
         </div>
     );
 };
