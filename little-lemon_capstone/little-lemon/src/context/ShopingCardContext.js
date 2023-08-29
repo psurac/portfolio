@@ -2,8 +2,25 @@ import { createContext, useContext, useReducer } from "react";
 
 const ShoppingCardContext = createContext();
 
+function cardReducer(card, action) {
+    switch (action.type) {
+        case 'add': {
+            return [...card, action.dish];
+        }
+        case 'delete': {
+            return card.filter((_, index) => index !== action.index);
+        }
+        case 'clone': {
+            return [...card, card.filter((_, index) => index === action.index)];
+        }
+        default: {
+            throw Error('Unknown action: ' + action.type);
+        }
+    }
+};
+
 export const ShoppingCardProvider = ({ children }) => {
-    const { card, dispatch } = useReducer(cardReducer, [{name: 'Test', price: '10',},{name: 'Test2', price: '11',},]);
+    const [card, dispatch] = useReducer(cardReducer, []);
 
     function addToCard(dish) {
         dispatch({
@@ -26,22 +43,6 @@ export const ShoppingCardProvider = ({ children }) => {
         });
     }
 
-    function cardReducer(card, action) {
-        switch (action.type) {
-            case 'add': {
-                return [...card, action.dish];
-            }
-            case 'delete': {
-                return card.filter((_, index) => index !== action.index);
-            }
-            case 'clone': {
-                return [...card, card.filter((_, index) => index === action.index)];
-            }
-            default: {
-                throw Error('Unknown action: ' + action.type);
-            }
-        }
-    };
     return (
         <ShoppingCardContext.Provider value={{ card, addToCard, deleteFromCard, cloneCard }}>
             {children}

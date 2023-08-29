@@ -1,8 +1,9 @@
 import { useShoppingCard } from "../context/ShopingCardContext";
+import { useEffect } from "react";
 
 function ShoppingCard() {
     const { card, addToCard, deleteFromCard, cloneCard } = useShoppingCard();
-    
+
     return (
         <div className="shopping-card">
             {Array.isArray(card) && card.length ? card.map((item, index) => (
@@ -11,7 +12,7 @@ function ShoppingCard() {
                     <h6>{item.price}</h6>
                     <div
                         className="lemonButton"
-                        /* onClick={deleteFromCard(index)} */
+                        onClick={() => deleteFromCard(index)}
                     >X</div>
                 </div>
             )) : (
