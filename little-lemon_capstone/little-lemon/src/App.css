@@ -46,13 +46,21 @@
 
 header {
   padding: 4vh 10vw 4vh 10vw;
-  display: flex;
   border-bottom: var(--sec4) solid;
   position: fixed;
   top: 0;
   background-color: var(--sec3);
   z-index: 3;
   width: 100%;
+}
+
+.felxBoxHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: auto;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .header_logo, .header_menu {
@@ -214,10 +222,26 @@ footer > div {
   } */
 
   header {
-    flex-wrap: wrap;
-    justify-content: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .felxBoxHeader {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .header_logo {
+    order: 1;
+  }
+
+  .basket-container {
+    order: 2;
+    align-self: flex-end;
+  }
+
+  .header_menu {
+    order: 3;
   }
 
   header nav ul {
