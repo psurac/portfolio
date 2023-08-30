@@ -25,7 +25,7 @@
     box-shadow: 2px 2px 5px #000;
 }
 
-.close-button:focus {
+.close-button:active {
     background-color: var(--sec3);
     box-shadow: none;
 }

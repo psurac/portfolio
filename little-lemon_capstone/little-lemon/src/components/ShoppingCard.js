@@ -2,7 +2,7 @@ import { useShoppingCard } from "../context/ShoppingCardContext";
 import './ShoppingCard.css';
 
 function ShoppingCard({ Children }) {
-    const { card, addToCard, deleteFromCard, cloneCard, showCard, toggleShowCard } = useShoppingCard();
+    const { card, deleteFromCard, showCard, toggleShowCard } = useShoppingCard();
     const slideCardIn = showCard ? { right: '0', opacity: 0.95 } : {};
 
     return (

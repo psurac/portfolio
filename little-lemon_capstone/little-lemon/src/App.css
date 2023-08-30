@@ -133,7 +133,7 @@ footer > div {
   box-shadow: 2px 2px 5px #000;
 }
 
-.lemonButton:focus {
+.lemonButton:active {
   background-color: var(--sec2);
   box-shadow: none;
 }
