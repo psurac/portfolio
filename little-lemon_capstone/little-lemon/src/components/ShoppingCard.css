@@ -1,13 +1,31 @@
 .shopping-card {
     display: flex;
     flex-direction: column;
-    width: 280px;
+    width: 320px;
     position: fixed;
     right: -100%;
+    padding: 8px;
+    gap: 3px;
+    border-bottom-left-radius: 16px;
     opacity: 0;
     background-color: var(--sec4);
     color: var(--sec1);
     z-index: 4;
     transition-property: right, opacity;
     transition-duration: 1s;
-  }
+}
+
+.close-button {
+    background-color: var(--sec2);
+    color: var(--sec4);
+    margin: 5px;
+    padding: 3px 6px;
+    border: 2px solid var(--prim2);
+    border-radius: 16px;
+    box-shadow: 2px 2px 5px #000;
+}
+
+.close-button:focus {
+    background-color: var(--sec3);
+    box-shadow: none;
+}

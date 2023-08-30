@@ -1,7 +1,7 @@
 import Logo from './Logo.svg';
 import Basket from './images/basket.svg';
 import Nav from './Nav.js';
-import { useShoppingCard } from "./context/ShopingCardContext";
+import { useShoppingCard } from "./context/ShoppingCardContext";
 
 function Header() {
     const { toggleShowCard } = useShoppingCard();
