@@ -1,7 +1,7 @@
 import { useShoppingCard } from "../context/ShopingCardContext";
 import { useEffect } from "react";
 
-function ShoppingCard() {
+function ShoppingCard({ toggleShowCard }) {
     const { card, addToCard, deleteFromCard, cloneCard } = useShoppingCard();
 
     return (

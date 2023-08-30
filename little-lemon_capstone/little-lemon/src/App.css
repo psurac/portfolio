@@ -118,7 +118,7 @@ footer > div {
   flex-direction: column;
   width: 280px;
   position: fixed;
-  right: 0;
+  right: -100%;
   background-color: var(--sec4);
   color: var(--sec1);
   z-index: 4;

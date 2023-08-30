@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import ShoppingCard from './components/ShoppingCard';
 import Header from './Header.js';
@@ -10,6 +11,21 @@ import { MenuProvider } from './context/MenuContext.js';
 import { TestimonialsProvider } from './context/TestimonialsContext.js';
 
 function App() {
+  const [ showCard, setShowCard ] = useState(false);
+
+  function toggleShowCard () {
+    setShowCard(!showCard);
+  }
+
+  useEffect(() => {
+    const shoppingCard = document.querySelector('.shopping-card')
+    if (showCard) {
+      shoppingCard.style.right = '0';
+    } else {
+      shoppingCard.style.right = '-100%';
+    }
+  }, [showCard, setShowCard]);
+
   return (
     <Router>
       <ShoppingCardProvider>
@@ -17,8 +33,8 @@ function App() {
           <MenuProvider>
             <TestimonialsProvider>
               <div className="App">
-                <ShoppingCard />
-                <Header className="Header " />
+                <ShoppingCard toggleShowCard={toggleShowCard}/>
+                <Header className="Header " toggleShowCard={toggleShowCard} />
                 <Main className="main" />
                 <Footer className="Footer" />
               </div>
