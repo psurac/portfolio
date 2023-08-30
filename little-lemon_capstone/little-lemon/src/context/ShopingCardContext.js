@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useState, useReducer } from "react";
 
 const ShoppingCardContext = createContext();
 
@@ -21,6 +21,11 @@ function cardReducer(card, action) {
 
 export const ShoppingCardProvider = ({ children }) => {
     const [card, dispatch] = useReducer(cardReducer, []);
+    const [showCard, setShowCard] = useState(false);
+
+    const toggleShowCard = () => {
+        setShowCard(!showCard);
+    }
 
     function addToCard(dish) {
         dispatch({
@@ -44,8 +49,9 @@ export const ShoppingCardProvider = ({ children }) => {
     }
 
     return (
-        <ShoppingCardContext.Provider value={{ card, addToCard, deleteFromCard, cloneCard }}>
-            {children}
+        <ShoppingCardContext.Provider 
+            value={{ card, addToCard, deleteFromCard, cloneCard, showCard, toggleShowCard }}>
+                {children}
         </ShoppingCardContext.Provider>
     );
 };

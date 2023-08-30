@@ -1,11 +1,12 @@
 import { useShoppingCard } from "../context/ShopingCardContext";
-import { useEffect } from "react";
+import './ShoppingCard.css';
 
-function ShoppingCard({ toggleShowCard }) {
-    const { card, addToCard, deleteFromCard, cloneCard } = useShoppingCard();
+function ShoppingCard({ Children }) {
+    const { card, addToCard, deleteFromCard, cloneCard, showCard, toggleShowCard } = useShoppingCard();
+    const slideCardIn = showCard ? { right: '0', opacity: 1 } : {};
 
     return (
-        <div className="shopping-card">
+        <div className="shopping-card" style={slideCardIn}>
             {Array.isArray(card) && card.length ? card.map((item, index) => (
                 <div className="meal" key={index}>
                     <h6>{item.name}</h6>

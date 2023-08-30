@@ -113,17 +113,6 @@ footer > div {
   margin-right: 4rem;
 }
 
-.shopping-card {
-  display: flex;
-  flex-direction: column;
-  width: 280px;
-  position: fixed;
-  right: -100%;
-  background-color: var(--sec4);
-  color: var(--sec1);
-  z-index: 4;
-}
-
 .image {
   border-radius: 16px;
   /* box-shadow: 2px 2px 5px #000; */

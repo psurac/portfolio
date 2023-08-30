@@ -1,8 +1,11 @@
 import Logo from './Logo.svg';
 import Basket from './images/basket.svg';
 import Nav from './Nav.js';
+import { useShoppingCard } from "./context/ShopingCardContext";
 
-function Header({ toggleShowCard }) {
+function Header() {
+    const { toggleShowCard } = useShoppingCard();
+
     return (
         <header className='felxBoxHeader'>
             <div className="header_logo">

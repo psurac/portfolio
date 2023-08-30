@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, memo } from 'react';
+import React, { memo, lazy, Suspense } from 'react';
 import { Route, Routes } from "react-router-dom";
 import { useSitesContext } from './context/SitesContext.js';
 
@@ -23,4 +23,4 @@ function Main() {
     );
 };
 
-export default Main;
+export default memo(Main);
