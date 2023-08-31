@@ -1,11 +1,11 @@
 import menuCategoryProducer from "../utility/menuCategoryProducer";
 import { useMenu } from "../context/MenuContext";
 import { useShoppingCard } from "../context/ShoppingCardContext";
+import Dish from "../components/Dish";
 
 function OrderOnline() {
-    const { dishes, customes } = useMenu();
+    const { dishes } = useMenu();
     const menuCategory = menuCategoryProducer(dishes);
-    const { addToCard, deleteFromCard, cloneCard } = useShoppingCard();
 
     const slidToSection = (e, category) => {
         e.preventDefault();
@@ -32,11 +32,12 @@ function OrderOnline() {
             <div className="flex-category-container">
                 {menuCategory.map((category, index) => (
                     <div key={index} id={`${category.replace(/ /g,'').toLowerCase()}-section`}>
-
+                        {dishes.map((dish, index) => (
+                            category === dish.category && <Dish key={index} dish={dish} />
+                        ))}
                     </div>
                 ))}
             </div>
-            <h1>Order Online</h1>
         </div>
     );
 };
