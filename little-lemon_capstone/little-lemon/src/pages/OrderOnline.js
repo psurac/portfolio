@@ -7,11 +7,12 @@ function OrderOnline() {
     const menuCategory = menuCategoryProducer(dishes);
     const { addToCard, deleteFromCard, cloneCard } = useShoppingCard();
 
-    const slidToSection = (category) => {
+    const slidToSection = (e, category) => {
+        e.preventDefault();
         const categorySection = document.getElementById(`${category}-section`);
         if (categorySection) {
             categorySection.scrollIntoView({
-                behavior: 'smoth',
+                behavior: 'smooth',
                 block: 'start',
             });
         };
@@ -20,14 +21,18 @@ function OrderOnline() {
     return (
         <div>
             <div className="nav-order-online">
-                {menuCategory.map((category) => (
-                    <a key={category} href={`/${category}`} onClick={slidToSection(category)}>{category}</a>
+                {menuCategory.map((category, index) => (
+                    <a key={index}
+                        href={`/${category}`}
+                        onClick={(e) => slidToSection(e, category.replace(/ /g,'').toLowerCase())}>
+                        {category}
+                    </a>
                 ))}
             </div>
             <div className="flex-category-container">
                 {menuCategory.map((category, index) => (
-                    <div key={index} id={`${category}-section`}>
-                        
+                    <div key={index} id={`${category.replace(/ /g,'').toLowerCase()}-section`}>
+
                     </div>
                 ))}
             </div>
