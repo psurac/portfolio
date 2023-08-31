@@ -90,6 +90,19 @@ header nav ul li {
   white-space: nowrap;
 }
 
+.basket-container {
+  background-color: var(--sec3);
+  border-radius: 16px;
+  padding: 2px;
+  box-shadow: 2px 2px 5px #000;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.basket-container:active {
+  box-shadow: none;
+}
+
 main {
   margin-top: 7rem;
 }

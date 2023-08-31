@@ -4,7 +4,9 @@ import Nav from './Nav.js';
 import { useShoppingCard } from "./context/ShoppingCardContext";
 
 function Header() {
-    const { toggleShowCard } = useShoppingCard();
+    const { toggleShowCard, cardHasElements } = useShoppingCard();
+    const styleBasket = cardHasElements ?
+        {backgroundColor: 'var(--prim2)'} : {backgroundColor: 'var(--sec3)'};
 
     return (
         <header className='felxBoxHeader'>
@@ -14,7 +16,11 @@ function Header() {
             <div className="header_menu">
                 <Nav />
             </div>
-            <div className="basket-container" onClick={() => toggleShowCard()}>
+            <div
+                className="basket-container"
+                onClick={() => toggleShowCard()}
+                style={styleBasket}
+            >
                 <img className="" src={Basket} alt="Shopping Card" />
             </div>
         </header>
