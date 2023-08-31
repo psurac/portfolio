@@ -38,6 +38,8 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.special span {
+.special .specail-action {
     grid-area: order;
+    display: flex;
+    flex-direction: row;
 }

@@ -12,7 +12,7 @@ function SpecialsSection() {
     return (
         <div className="grid-ss">
             <h1 className="sectiontitle padd-right-left">Specials</h1>
-            <div className="button">
+            <div className="button padd-right-left">
                 <Button link={link} buttonText={name} />
             </div>
             <div className="specials-container padd-right-left">

@@ -124,7 +124,7 @@ footer > div {
   background-color: var(--prim2);
   border-radius: 16px;
   padding: 10px 15px 10px 15px;
-  min-width: 180px;
+  width: 180px;
   max-width: 250px;
   text-align: center;
   align-items: center;
