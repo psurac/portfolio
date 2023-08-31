@@ -7,7 +7,7 @@ import './SpecialSection.css';
 function SpecialsSection() {
     const name = 'Menu';
     const link = useSitesContext().find(item => item.name === name).path;
-    const menu = useMenu();
+    const { dishes } = useMenu();
 
     return (
         <div className="grid-ss">
@@ -16,7 +16,7 @@ function SpecialsSection() {
                 <Button link={link} buttonText={name} />
             </div>
             <div className="specials-container padd-right-left">
-                {menu.map(item => item.special ? <Special dish={item} key={item.id} /> : null)}
+                {dishes.map(item => item.special ? <Special dish={item} key={item.id} /> : null)}
             </div>
         </div>
     );

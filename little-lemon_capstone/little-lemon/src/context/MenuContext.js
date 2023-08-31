@@ -51,8 +51,31 @@ export const MenuProvider = ({ children }) => {
         },
     ];
 
+    const customs = [
+        {
+            ingredient: 'extra Cheese',
+            price: 1.00,
+        },
+        {
+            ingredient: 'Olives',
+            price: 1.50,
+        },
+        {
+            ingredient: 'Grilled Vegtebels',
+            price: 2.50,
+        },
+        {
+            ingredient: 'Chilli',
+            price: 1.00,
+        },
+        {
+            ingredient: 'Champginions',
+            price: 1.00,
+        },
+    ];
+
     return (
-        <MenuContext.Provider value={dishes}>
+        <MenuContext.Provider value={{ dishes, customs }}>
             {children}
         </MenuContext.Provider>
     );

@@ -30,13 +30,19 @@ export const ShoppingCardProvider = ({ children }) => {
         } else {
             setCardHasElements(false);
         }
-        }, [card]);
+    }, [card]);
 
     const toggleShowCard = () => {
         setShowCard(!showCard);
     }
 
-    function addToCard(dish) {
+    function addToCard(dishRich, customisation = []) {
+        const dish = {
+            id: dishRich.id,
+            name: dishRich.name,
+            price: dishRich.price,
+            customisation: customisation,
+        };
         dispatch({
             type: 'add',
             dish: dish,
@@ -58,9 +64,17 @@ export const ShoppingCardProvider = ({ children }) => {
     }
 
     return (
-        <ShoppingCardContext.Provider 
-            value={{ card, addToCard, deleteFromCard, cloneCard, showCard, toggleShowCard, cardHasElements }}>
-                {children}
+        <ShoppingCardContext.Provider
+            value={{
+                card,
+                addToCard,
+                deleteFromCard,
+                cloneCard,
+                showCard,
+                toggleShowCard,
+                cardHasElements
+            }}>
+            {children}
         </ShoppingCardContext.Provider>
     );
 };
