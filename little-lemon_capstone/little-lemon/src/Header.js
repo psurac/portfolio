@@ -21,7 +21,7 @@ function Header() {
                 onClick={() => toggleShowCard()}
                 style={styleBasket}
             >
-                <img className="" src={Basket} alt="Shopping Card" />
+                <img className="" src={Basket} alt="Shopping Card" style={{width: '33px'}} />
             </div>
         </header>
     );
