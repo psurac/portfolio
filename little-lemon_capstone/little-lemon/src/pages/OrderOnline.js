@@ -1,6 +1,5 @@
 import menuCategoryProducer from "../utility/menuCategoryProducer";
 import { useMenu } from "../context/MenuContext";
-import { useShoppingCard } from "../context/ShoppingCardContext";
 import Dish from "../components/Dish";
 
 function OrderOnline() {
