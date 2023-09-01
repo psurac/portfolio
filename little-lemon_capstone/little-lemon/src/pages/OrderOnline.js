@@ -1,6 +1,7 @@
 import menuCategoryProducer from "../utility/menuCategoryProducer";
 import { useMenu } from "../context/MenuContext";
 import Dish from "../components/Dish";
+import './OrderOnline.css';
 
 function OrderOnline() {
     const { dishes } = useMenu();
@@ -18,7 +19,7 @@ function OrderOnline() {
     };
 
     return (
-        <div>
+        <div className="orderonline-container">
             <div className="nav-order-online">
                 {menuCategory.map((category, index) => (
                     <a key={index}
@@ -31,6 +32,7 @@ function OrderOnline() {
             <div className="flex-category-container">
                 {menuCategory.map((category, index) => (
                     <div key={index} id={`${category.replace(/ /g,'').toLowerCase()}-section`}>
+                        <h2 className="sectiontitle category">{category}</h2>
                         {dishes.map((dish, index) => (
                             category === dish.category && <Dish key={index} dish={dish} />
                         ))}

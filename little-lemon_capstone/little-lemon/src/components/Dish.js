@@ -8,7 +8,7 @@ function Dish({ dish }) {
         <div>
             <span>{dish.name}</span>
             <span>{dish.price}</span>
-            <form className="customisation-form">
+            <form className="customisation-form" onSubmit={null}>
                 <div className="customisation-container">
                     {customs.map(({ ingredient, price }) => (
                         <label key={ingredient} htmlFor={ingredient}>
@@ -18,7 +18,7 @@ function Dish({ dish }) {
                         </label>
                     ))}
                 </div>
-                <button className="lemonButton" type="submit" onClick={null}>Add to order</button>
+                <button className="lemonButton" type="submit">Add to order</button>
                 <button className="lemonButton" onClick={null}>Customisat Dish</button>
             </form>
         </div>
