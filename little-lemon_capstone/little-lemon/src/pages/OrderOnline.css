@@ -1,5 +1,5 @@
 .orderonline-container {
-    padding: 5vh 17vw 1vh 10vw;
+    padding: 5vh 18vw 1vh 10vw;
 }
 .nav-order-online {
     background-color: var(--prim1);
@@ -41,6 +41,6 @@
 
 @media screen and (max-width: 800px) {
     .orderonline-container {
-        padding: 5vh 25vw 1vh 10vw;
+        padding: 5vh 27vw 1vh 10vw;
     }
 }

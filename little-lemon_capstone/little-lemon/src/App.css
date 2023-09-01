@@ -146,7 +146,35 @@ footer > div {
   box-shadow: 2px 2px 5px #000;
 }
 
+.lemonButton:hover {
+  background-color: var(--sec3);
+}
+
 .lemonButton:active {
+  background-color: var(--sec2);
+  box-shadow: none;
+}
+
+.lemonButton-small {
+  display: inline-block;
+  border: 2px solid var(--sec4);
+  background-color: var(--prim2);
+  border-radius: 16px;
+  padding: 5px 9px 5px 9px;
+  width: 115px;
+  max-width: 1800px;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  align-self: center;
+  box-shadow: 2px 2px 5px #000;
+}
+
+.lemonButton-small:hover {
+  background-color: var(--sec3);
+}
+
+.lemonButton-small:active {
   background-color: var(--sec2);
   box-shadow: none;
 }
@@ -193,6 +221,11 @@ footer > div {
 
 .highlighttext {
   font-size: 16pt;
+  font-family: 'Karla';
+}
+
+.textsmall {
+  font-size: 13pt;
   font-family: 'Karla';
 }
 

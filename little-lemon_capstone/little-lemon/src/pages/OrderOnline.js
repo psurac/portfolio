@@ -13,14 +13,14 @@ function OrderOnline() {
         if (categorySection) {
             categorySection.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start',
+                block: 'end',
             });
         };
     };
 
     return (
         <div className="orderonline-container">
-            <div className="nav-order-online">
+            <div className="nav-order-online cardtitle">
                 {menuCategory.map((category, index) => (
                     <a key={index}
                         href={`/${category}`}

@@ -1,13 +1,14 @@
 import { useMenu } from "../context/MenuContext";
 import { useShoppingCard } from "../context/ShoppingCardContext";
+import "./Dish.css";
 
 function Dish({ dish }) {
     const { customs } = useMenu();
     const { addToCard, deleteFromCard } = useShoppingCard();
     return (
-        <div>
-            <span>{dish.name}</span>
-            <span>{dish.price}</span>
+        <div className="dish-container textsmall">
+            <span className="dish-name weeksspecial">{dish.name}</span>
+            <span className="dish-price">$ {dish.price}</span>
             <form className="customisation-form" onSubmit={null}>
                 <div className="customisation-container">
                     {customs.map(({ ingredient, price }) => (
@@ -18,8 +19,8 @@ function Dish({ dish }) {
                         </label>
                     ))}
                 </div>
-                <button className="lemonButton" type="submit">Add to order</button>
-                <button className="lemonButton" onClick={null}>Customisat Dish</button>
+                <button className="lemonButton-small" onClick={null}>Customais Dish</button>
+                <button className="lemonButton-small" type="submit">Add to order</button>
             </form>
         </div>
     )

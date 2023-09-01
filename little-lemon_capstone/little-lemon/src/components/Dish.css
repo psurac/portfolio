@@ -1,0 +1,19 @@
+.dish-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
+    margin: 5px 5px 10px 5px;
+    background-color: var(--sec2);
+    opacity: 0.95;
+    border-radius: 16px;
+    border: 1px solid var(--sec4);
+}
+
+.dish-price {
+    justify-self: end;
+}
+
+.customisation-form {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
