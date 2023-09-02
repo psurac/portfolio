@@ -9,19 +9,40 @@ function Dish({ dish }) {
     const { customs } = useMenu();
     const { addToCard, deleteFromCard } = useShoppingCard();
 
+    const addToCardHandler = (e) => {
+        e.preventDefault();
+        const custom = [];
+        const customDish = {...dish, price: sumDish};
+        const data = new FormData(e.target);
+        for (const key of data.keys()) {
+            custom.push(customs[key]);
+        }
+        addToCard(customDish, custom);
+
+        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        console.log(checkboxes);
+        checkboxes.forEach((checkbox) => {
+            console.log(checkbox);
+            checkbox.removeAttribute('checked');
+        })
+        setSumDish(dish.price);
+        setToggleCustom(false);
+    };
+
     return (
         <div className="dish-container textsmall">
             <span className="dish-name weeksspecial">{dish.name}</span>
             <span className="dish-price">$ {dish.price}</span>
-            <form className="customisation-form" onSubmit={null}>
-                <div className="customisation-container" style={{display: toggleCustom ? 'block' : 'none'}}>
-                    {customs.map(({ ingredient, price }) => (
+            <form className="customisation-form" onSubmit={addToCardHandler}>
+                <div className="customisation-container" style={{display: toggleCustom ? 'flex' : 'none'}}>
+                    {customs.map(({ ingredient, price }, key) => (
                         <label className="custom-flex-container" key={ingredient} htmlFor={ingredient}>
                             <div>
                                 <input
+                                    className='checkbox'
                                     type="checkbox"
                                     id={ingredient}
-                                    name={ingredient}
+                                    name={key}
                                     onChange={(e) => {
                                         e.target.checked ?
                                             setSumDish(Math.round((sumDish + price) * 100) / 100) :
