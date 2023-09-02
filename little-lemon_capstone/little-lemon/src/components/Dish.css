@@ -16,4 +16,42 @@
 .customisation-form {
     grid-column-start: 1;
     grid-column-end: 3;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.customisation-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1rem 1rem;
+}
+
+.custom-flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-sum {
+    justify-self: end;
+    align-self: center;
+}
+
+@media screen and (max-width: 800px) {
+    .customisation-form {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .customisation-container {
+        order: -2;
+    }
+
+    .price-sum {
+        order: -1;
+        align-self: flex-end;
+    }
 }
