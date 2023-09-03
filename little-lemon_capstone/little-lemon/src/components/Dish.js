@@ -6,6 +6,7 @@ import "./Dish.css";
 function Dish({ dish }) {
     const [ toggleCustom, setToggleCustom ] = useState(false);
     const [ sumDish, setSumDish ] = useState(dish.price);
+    const [ key, setKey ] = useState(1);
     const { customs } = useMenu();
     const { addToCard, deleteFromCard } = useShoppingCard();
 
@@ -19,18 +20,21 @@ function Dish({ dish }) {
         }
         addToCard(customDish, custom);
 
-        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        setKey(key + 1);
+
+        /* const checkboxes = document.querySelectorAll('input[type=checkbox]');
         console.log(checkboxes);
         checkboxes.forEach((checkbox) => {
+            // TODO finde the error with the checked
             console.log(checkbox);
             checkbox.removeAttribute('checked');
-        })
+        }) */
         setSumDish(dish.price);
         setToggleCustom(false);
     };
 
     return (
-        <div className="dish-container textsmall">
+        <div className="dish-container textsmall" key={key}>
             <span className="dish-name weeksspecial">{dish.name}</span>
             <span className="dish-price">$ {dish.price}</span>
             <form className="customisation-form" onSubmit={addToCardHandler}>
