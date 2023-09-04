@@ -4,8 +4,9 @@ import Button from './Button';
 import { useSitesContext } from '../context/SitesContext.js';
 
 function HeroSection() {
+    const { sites } = useSitesContext();
     const name = 'Reservation';
-    const link = useSitesContext().find(item => item.name === name).path;
+    const link = sites.find(item => item.name === name).path;
     const buttonText = 'Reserv a Table';
     return (
         <div className="prim1 padd-right-left hero-flex">

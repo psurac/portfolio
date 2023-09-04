@@ -6,8 +6,9 @@ import './Special.css';
 
 function Special({ dish }) {
     const { addToCard } = useShoppingCard();
+    const { sites } = useSitesContext();
     const name = 'Reservation';
-    const link = useSitesContext().find(item => item.name === name).path;
+    const link = sites.find(item => item.name === name).path;
 
     const [image, setImage] = useState(null);
     useEffect(() => {

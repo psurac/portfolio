@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { useSitesContext } from './context/SitesContext.js';
 
 function Main() {
-    const sites = useSitesContext();
+    const {sites} = useSitesContext();
     return (
         <main>
             <Routes>

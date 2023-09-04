@@ -6,31 +6,37 @@ export const SitesContextProvider = ({ children }) => {
     const sites = [
         {
             name: 'Home',
-            path: '/'
+            path: '/',
+            showInNavBar: true,
         },
         {
             name: 'About',
-            path: '/about'
+            path: '/about',
+            showInNavBar: true,
         },
         {
             name: 'Menu',
-            path: '/menu'
+            path: '/menu',
+            showInNavBar: true,
         },
         {
             name: 'Reservation',
-            path: '/reservation'
+            path: '/reservation',
+            showInNavBar: true,
         },
         {
             name: 'Order Online',
-            path: '/order-online'
+            path: '/order-online',
+            showInNavBar: true,
         },
         {
             name: 'Login',
-            path: '/login'
+            path: '/login',
+            showInNavBar: true,
         },
     ]
     return (
-        <SitesContext.Provider value={sites}>
+        <SitesContext.Provider value={{sites}}>
             {children}
         </SitesContext.Provider>
     );

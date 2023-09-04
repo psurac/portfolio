@@ -5,8 +5,9 @@ import Special from "./Special.js";
 import './SpecialSection.css';
 
 function SpecialsSection() {
+    const { sites } = useSitesContext();
     const name = 'Menu';
-    const link = useSitesContext().find(item => item.name === name).path;
+    const link = sites.find(item => item.name === name).path;
     const { dishes } = useMenu();
 
     return (
