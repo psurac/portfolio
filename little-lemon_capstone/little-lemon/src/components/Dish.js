@@ -21,14 +21,6 @@ function Dish({ dish }) {
         addToCard(customDish, custom);
 
         setKey(key + 1);
-
-        /* const checkboxes = document.querySelectorAll('input[type=checkbox]');
-        console.log(checkboxes);
-        checkboxes.forEach((checkbox) => {
-            // TODO finde the error with the checked
-            console.log(checkbox);
-            checkbox.removeAttribute('checked');
-        }) */
         setSumDish(dish.price);
         setToggleCustom(false);
     };
