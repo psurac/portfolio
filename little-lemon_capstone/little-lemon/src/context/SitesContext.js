@@ -34,6 +34,11 @@ export const SitesContextProvider = ({ children }) => {
             path: '/login',
             showInNavBar: true,
         },
+        {
+            name: 'Order',
+            path: '/order',
+            showInNavBar: false,
+        }
     ]
     return (
         <SitesContext.Provider value={{sites}}>

@@ -84,8 +84,3 @@
     background-color: var(--sec3);
     box-shadow: none;
 }
-
-.check-order-button:disabled {
-    opacity: 0.7;
-    box-shadow: none;
-}

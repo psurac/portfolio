@@ -5,9 +5,10 @@ import { useSitesContext } from '../context/SitesContext.js';
 import './Menu.css';
 
 function Menu() {
+    const { sites } = useSitesContext();
     const { dishes } = useMenu();
     const name = 'Reservation';
-    const link = useSitesContext().find(item => item.name === name).path;
+    const link = sites.find(item => item.name === name).path;
     const buttonText = 'Reserv a Table';
 
     const menuCategorys = menuCategoryProducer(dishes);
