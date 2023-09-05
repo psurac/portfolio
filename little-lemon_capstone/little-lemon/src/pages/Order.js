@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSum } from '../hooks/useSum';
 import { useShoppingCard } from "../context/ShoppingCardContext";
+import { listEmptyChecker } from '../utility/listEmptyChecker';
 import './Order.css';
 
 function Order() {
@@ -9,12 +10,12 @@ function Order() {
 
     return (
         <div className="order-container padd-right-left">
-            {Array.isArray(card) && card.length ? card.map((item, index) => (
+            {listEmptyChecker(card) ? card.map((item, index) => (
                 <div className="meal leadtext" key={index}>
                     <h5 className="dish-name">{item.name}</h5>
                     <h5 className="dish-price">{item.price}</h5>
                     <span className="addings highlighttext"> Additional:
-                        {Array.isArray(item.customisation) && item.customisation.length ?
+                        {listEmptyChecker(item.customisation) ?
                             item.customisation.map((ingredient, index) => (
                                 index === 0 ? <> {ingredient.ingredient}</> : <>, {ingredient.ingredient}</>
                             )) : <> -</>}
@@ -90,7 +91,16 @@ function Order() {
                     <input type="checkbox" id="check-newsletter" name="check-newsletter" required></input>
                     <span className="check-newsletter-text"> I want to get the newsletter with the latet updates.</span>
                 </label>
-                <button type='submit' className="lemonButton-small">Order</button>
+                <button
+                    type='submit'
+                    className="lemonButton-small"
+                    style={{
+                        opacity: !listEmptyChecker(card) &&  0.7,
+                        boxShadow: !listEmptyChecker(card) &&  'none',
+                        pointerEvents: !listEmptyChecker(card) &&  'none',
+                    }}>
+                        Order
+                    </button>
             </form>
         </div>
     );

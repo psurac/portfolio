@@ -2,6 +2,7 @@ import { useSum } from "../hooks/useSum";
 import { useSitesContext } from '../context/SitesContext.js';
 import { useShoppingCard } from "../context/ShoppingCardContext";
 import { Link } from 'react-router-dom';
+import { listEmptyChecker } from '../utility/listEmptyChecker';
 import './ShoppingCard.css';
 
 function ShoppingCard({ Children }) {
@@ -16,7 +17,7 @@ function ShoppingCard({ Children }) {
             <div>
                 <button onClick={toggleShowCard} className="close-button">Close</button>
             </div>
-            {Array.isArray(card) && card.length ? card.map((item, index) => (
+            {listEmptyChecker(card) ? card.map((item, index) => (
                 <div className="meal" key={index}>
                     <button
                         className="delete-button"
@@ -36,9 +37,9 @@ function ShoppingCard({ Children }) {
                     onClick={toggleShowCard}
                     className="check-order-button"
                     style={{
-                        opacity: !card.length &&  0.7,
-                        boxShadow: !card.length &&  'none',
-                        pointerEvents: !card.length &&  'none',
+                        opacity: !listEmptyChecker(card) &&  0.7,
+                        boxShadow: !listEmptyChecker(card) &&  'none',
+                        pointerEvents: !listEmptyChecker(card) &&  'none',
                     }}>
                         Order
                 </Link>
