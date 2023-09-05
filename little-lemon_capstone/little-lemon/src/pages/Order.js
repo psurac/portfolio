@@ -1,7 +1,9 @@
+import { useSum } from '../hooks/useSum';
 import { useShoppingCard } from "../context/ShoppingCardContext";
 
 function Order() {
     const { card } = useShoppingCard();
+
     return (
         <div className="order-container padd-right-left">
             {Array.isArray(card) && card.length ? card.map((item, index) => (
@@ -16,6 +18,7 @@ function Order() {
                     </span>
                 </div>
             )) : <span>Nothing selected</span>}
+            <span className="total-price">Total Price: {useSum(card)}</span>
             <form className="order-form" onSubmit={null}>
                 <label className="check-order-label" htmlFor="check-order">
                     <input type="checkbox" id="check-order" name="check-order" required></input>

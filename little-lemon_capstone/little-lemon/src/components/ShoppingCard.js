@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useSum } from "../hooks/useSum";
 import { useSitesContext } from '../context/SitesContext.js';
 import { useShoppingCard } from "../context/ShoppingCardContext";
 import { Link } from 'react-router-dom';
@@ -8,15 +8,8 @@ function ShoppingCard({ Children }) {
     const { sites } = useSitesContext();
     const name = 'Order';
     const link = sites.find(item => item.name === name).path;
-    const [totalSum, setTotalSum] = useState(0);
     const { card, deleteFromCard, showCard, toggleShowCard } = useShoppingCard();
     const slideCardIn = showCard ? { right: '0', opacity: 0.95 } : {};
-
-    useEffect(() => {
-        let sum = 0;
-        card.map(item => sum = Math.round((sum + item.price) * 100) / 100)
-        setTotalSum(sum);
-    }, [card]);
 
     return (
         <div className="shopping-card" style={slideCardIn}>
@@ -49,7 +42,7 @@ function ShoppingCard({ Children }) {
                     }}>
                         Order
                 </Link>
-                <h5 className="total-sum">Total: ${totalSum}</h5>
+                <h5 className="total-sum">Total: ${useSum(card)}</h5>
             </div>
         </div>
     );
