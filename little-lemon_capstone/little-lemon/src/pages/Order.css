@@ -1,0 +1,27 @@
+.order-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 3rem;
+}
+
+.meal {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.addings {
+    font-size: 13px;
+}
+
+.total-price {
+    align-self: flex-end;
+    padding: 4px;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
