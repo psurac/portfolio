@@ -40,13 +40,14 @@ function ShoppingCard({ Children }) {
             <div className="order-total-flex-container">
                 <Link
                     to={link}
+                    onClick={toggleShowCard}
                     className="check-order-button"
                     style={{
                         opacity: !card.length &&  0.7,
                         boxShadow: !card.length &&  'none',
                         pointerEvents: !card.length &&  'none',
                     }}>
-                        Check and order
+                        Order
                 </Link>
                 <h5 className="total-sum">Total: ${totalSum}</h5>
             </div>

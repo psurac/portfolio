@@ -8,7 +8,7 @@ function Dish({ dish }) {
     const [ sumDish, setSumDish ] = useState(dish.price);
     const [ key, setKey ] = useState(1);
     const { customs } = useMenu();
-    const { addToCard, deleteFromCard } = useShoppingCard();
+    const { addToCard } = useShoppingCard();
 
     const addToCardHandler = (e) => {
         e.preventDefault();
