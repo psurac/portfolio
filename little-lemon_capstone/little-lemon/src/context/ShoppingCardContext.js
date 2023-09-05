@@ -13,6 +13,9 @@ function cardReducer(card, action) {
         case 'clone': {
             return [...card, card.filter((_, index) => index === action.index)];
         }
+        case 'empty': {
+            return [];
+        }
         default: {
             throw Error('Unknown action: ' + action.type);
         }
@@ -63,6 +66,12 @@ export const ShoppingCardProvider = ({ children }) => {
         });
     }
 
+    function emptyCard() {
+        dispatch({
+            type: 'empty',
+        })
+    }
+
     return (
         <ShoppingCardContext.Provider
             value={{
@@ -70,6 +79,7 @@ export const ShoppingCardProvider = ({ children }) => {
                 addToCard,
                 deleteFromCard,
                 cloneCard,
+                emptyCard,
                 showCard,
                 toggleShowCard,
                 cardHasElements

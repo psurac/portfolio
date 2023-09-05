@@ -5,18 +5,21 @@ import { listEmptyChecker } from '../utility/listEmptyChecker';
 import './Order.css';
 
 function Order() {
+    const [ key, setKey ] = useState(1);
     const [addressRequired, setAdressRequired] = useState(true);
-    const { card } = useShoppingCard();
+    const { card, emptyCard } = useShoppingCard();
 
     const submitOrder = (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append('card', JSON.stringify(card));
         alert('Please check your inbox and confirm your Mailing Address');
+        emptyCard();
+        setKey(key + 1);
     };
 
     return (
-        <div className="order-container padd-right-left">
+        <div className="order-container padd-right-left" key={key}>
             {listEmptyChecker(card) ? card.map((item, index) => (
                 <div className="meal leadtext" key={index}>
                     <h5 className="dish-name">{item.name}</h5>
