@@ -8,6 +8,13 @@ function Order() {
     const [addressRequired, setAdressRequired] = useState(true);
     const { card } = useShoppingCard();
 
+    const submitOrder = (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        data.append('card', JSON.stringify(card));
+        alert('Please check your inbox and confirm your Mailing Address');
+    };
+
     return (
         <div className="order-container padd-right-left">
             {listEmptyChecker(card) ? card.map((item, index) => (
@@ -23,7 +30,7 @@ function Order() {
                 </div>
             )) : <span>Nothing selected</span>}
             <span className="total-price highlighttext">Total Price: {useSum(card)}</span>
-            <form className="order-form" onSubmit={null}>
+            <form className="order-form" onSubmit={(e) => submitOrder(e)}>
                 <label className="check-order-label" htmlFor="check-order">
                     <span>*</span>
                     <input type="checkbox" id="check-order" name="check-order" required></input>
@@ -88,7 +95,7 @@ function Order() {
                     </div>
                 }
                 <label className="check-newsletter-label" htmlFor="check-newsletter">
-                    <input type="checkbox" id="check-newsletter" name="check-newsletter" required></input>
+                    <input type="checkbox" id="check-newsletter" name="check-newsletter" ></input>
                     <span className="check-newsletter-text"> I want to get the newsletter with the latet updates.</span>
                 </label>
                 <button
