@@ -5,6 +5,23 @@
     padding-top: 3rem;
 }
 
+.order-container input:invalid {
+    border: 2px solid rgba(236, 152, 152, 0.808);
+    border-radius: 16px;
+}
+
+.order-container input:valid {
+    border: 2px solid rgba(143, 237, 111, 0.808);
+    border-radius: 16px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    height: 28px;
+    padding: 5px;
+    min-width: 220px;
+    max-width: 80vw;
+}
+
 .meal {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -24,4 +41,33 @@
     display: flex;
     flex-direction: column;
     gap: 7px;
+}
+
+.addrss-from-container {
+    display: grid;
+    grid-template-areas: "heading heading" "street street" "zip city";
+    gap: 5px;
+    font-size: 11px;
+}
+
+.heading {
+    grid-area: heading;
+}
+
+.street-address-label {
+    grid-area: street;
+    display: flex;
+    flex-direction: column;
+}
+
+.zip-number-label {
+    grid-area: zip;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-label {
+    grid-area: city;
+    display: flex;
+    flex-direction: column;
 }

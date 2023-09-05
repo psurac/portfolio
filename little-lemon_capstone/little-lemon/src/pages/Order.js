@@ -57,7 +57,7 @@ function Order() {
                 </div>
                 {addressRequired &&
                     <div className="addrss-from-container">
-                        <h5 className="weeksspecial">Address</h5>
+                        <h5 className="weeksspecial heading">Address</h5>
                         <label className="street-address-label" htmlFor="street-address">
                             <span className="street-address-text">Street house number</span>
                             <input
