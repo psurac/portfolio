@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { useSum } from '../hooks/useSum';
 import { useShoppingCard } from "../context/ShoppingCardContext";
 import './Order.css';
 
 function Order() {
+    const [addressRequired, setAdressRequired] = useState(true);
     const { card } = useShoppingCard();
 
     return (
@@ -34,44 +36,56 @@ function Order() {
                     <span>*</span>
                     <input type="tel" id="phone-number" name="phone-number" required placeholder="Phone Number"></input>
                 </label>
-                <label className="radio-deliver-type-label" htmlFor="radio-deliver-type">
-                    <input type="radio" id="radio-deliver-type" name="radio-deliver-type" value="TakeAway" />
-                    <span className="radio-deliver">TakeAway</span>
-                </label>
-                <label className="radio-deliver-type-label" htmlFor="radio-deliver-type">
-                    <input type="radio" id="radio-deliver-type" name="radio-deliver-type" value="Deliver" checked/>
-                    <span className="radio-deliver">Deliver</span>
-                </label>
-                <div className="addrss-from-container">
-                    <h5 className="weeksspecial">Address</h5>
-                    <label className="street-address-label" htmlFor="street-address">
-                        <span className="street-address-text">Street and house number</span>
-                        <input
-                            type="text"
-                            id="street-address"
-                            name="street-address"
-                            required
-                            placeholder="Street and house number"></input>
-                    </label>
-                    <label className="zip-number-label" htmlFor="zip-number">
-                        <span className="zip-number-text">Zip code</span>
-                        <input
-                            type="text"
-                            id="zip-number"
-                            name="zip-number"
-                            required
-                            placeholder="Zip Code"></input>
-                    </label>
-                    <label className="city-label" htmlFor="city">
-                        <span className="city-text">City</span>
-                        <input
-                            type="text"
-                            id="city"
-                            name="city"
-                            required
-                            placeholder="City"></input>
-                    </label>
+                <div className='radio-container'>
+                    <input
+                        type="radio"
+                        id="radio-takeaway"
+                        name="radio-deliver-type"
+                        value="TakeAway"
+                        onChange={() => setAdressRequired(false)}
+                    />
+                    <label htmlFor="radio-takeaway"> TakeAway</label>
+                    <input
+                        type="radio"
+                        id="radio-deliver"
+                        name="radio-deliver-type"value="Deliver"
+                        onChange={() => setAdressRequired(true)}
+                        checked={addressRequired}
+                    />
+                    <label htmlFor="radio-deliver"> Deliver</label>
                 </div>
+                {addressRequired &&
+                    <div className="addrss-from-container">
+                        <h5 className="weeksspecial">Address</h5>
+                        <label className="street-address-label" htmlFor="street-address">
+                            <span className="street-address-text">Street house number</span>
+                            <input
+                                type="text"
+                                id="street-address"
+                                name="street-address"
+                                required
+                                placeholder="Street house number"></input>
+                        </label>
+                        <label className="zip-number-label" htmlFor="zip-number">
+                            <span className="zip-number-text">Zip code</span>
+                            <input
+                                type="text"
+                                id="zip-number"
+                                name="zip-number"
+                                required
+                                placeholder="Zip Code"></input>
+                        </label>
+                        <label className="city-label" htmlFor="city">
+                            <span className="city-text">City</span>
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                required
+                                placeholder="City"></input>
+                        </label>
+                    </div>
+                }
                 <label className="check-newsletter-label" htmlFor="check-newsletter">
                     <input type="checkbox" id="check-newsletter" name="check-newsletter" required></input>
                     <span className="check-newsletter-text"> I want to get the newsletter with the latet updates.</span>
