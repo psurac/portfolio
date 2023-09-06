@@ -67,6 +67,13 @@ function Reservation() {
                         </label>
                     </div>
                     <input
+                        id='number-guests'
+                        name='number-guests'
+                        type='number'
+                        placeholder='Number of guests'
+                        required
+                    />
+                    <input
                         id='name'
                         name='name'
                         type='text'
