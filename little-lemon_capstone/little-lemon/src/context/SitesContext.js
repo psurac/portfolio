@@ -45,8 +45,12 @@ export const SitesContextProvider = ({ children }) => {
             showInNavBar: false,
         }
     ]
+
+    function getSitePathByName(name) {
+        return sites.find(item => item.name.toLowerCase() === name.toLowerCase()).path;
+    }
     return (
-        <SitesContext.Provider value={{sites}}>
+        <SitesContext.Provider value={{sites, getSitePathByName}}>
             {children}
         </SitesContext.Provider>
     );

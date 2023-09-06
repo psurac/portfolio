@@ -6,9 +6,8 @@ import './Special.css';
 
 function Special({ dish }) {
     const { addToCard } = useShoppingCard();
-    const { sites } = useSitesContext();
+    const { getSitePathByName } = useSitesContext();
     const name = 'Reservation';
-    const link = sites.find(item => item.name === name).path;
 
     const [image, setImage] = useState(null);
     useEffect(() => {
@@ -29,7 +28,7 @@ function Special({ dish }) {
             <p className="weeksspecial">{dish.description}</p>
             <div className="specail-action">
                 <button className='lemonButton' onClick={() => addToCard(dish)}>Enjoy at Home</button>
-                <button className='lemonButton' onClick={() => window.location.href=link}>Enjoy at Little-Lemon</button>
+                <button className='lemonButton' onClick={() => window.location.href=getSitePathByName(name)}>Enjoy at Little-Lemon</button>
             </div>
         </div>
     );

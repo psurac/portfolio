@@ -5,16 +5,15 @@ import Special from "./Special.js";
 import './SpecialSection.css';
 
 function SpecialsSection() {
-    const { sites } = useSitesContext();
+    const { getSitePathByName } = useSitesContext();
     const name = 'Menu';
-    const link = sites.find(item => item.name === name).path;
     const { dishes } = useMenu();
 
     return (
         <div className="grid-ss">
             <h1 className="sectiontitle padd-right-left">Specials</h1>
             <div className="button padd-right-left">
-                <Button link={link} buttonText={name} />
+                <Button link={getSitePathByName(name)} buttonText={name} />
             </div>
             <div className="specials-container padd-right-left">
                 {dishes.map(item => item.special ? <Special dish={item} key={item.id} /> : null)}
