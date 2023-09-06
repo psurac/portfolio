@@ -1,0 +1,29 @@
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.registration-container input[type="password"] {
+    height: 28px;
+    padding: 5px;
+    margin: 7px 0px;
+    min-width: 220px;
+    max-width: 80vw;
+}
+
+.registration-container input:invalid {
+    border: 2px solid rgba(236, 152, 152, 0.808);
+    border-radius: 16px;
+}
+
+.registration-container input:valid {
+    border: 2px solid rgba(143, 237, 111, 0.808);
+    border-radius: 16px;
+}
+
+.registration-container button {
+    margin-top: 15px;
+}

@@ -1,0 +1,22 @@
+.phone-mail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.phone-mail-container input[type="email"], input[type="tel"] {
+    height: 28px;
+    padding: 5px;
+    min-width: 220px;
+    max-width: 80vw;
+}
+
+.phone-mail-container input:invalid {
+    border: 2px solid rgba(236, 152, 152, 0.808);
+    border-radius: 16px;
+}
+
+.phone-mail-container input:valid {
+    border: 2px solid rgba(143, 237, 111, 0.808);
+    border-radius: 16px;
+}

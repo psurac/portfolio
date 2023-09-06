@@ -1,0 +1,45 @@
+.addrss-container {
+    display: grid;
+    grid-template-areas: "heading heading" "street street" "zip city";
+    gap: 5px;
+    font-size: 11px;
+}
+
+.addrss-container input[type="text"] {
+    height: 28px;
+    padding: 5px;
+    min-width: 220px;
+    max-width: 80vw;
+}
+
+.heading {
+    grid-area: heading;
+}
+
+.street-address-label {
+    grid-area: street;
+    display: flex;
+    flex-direction: column;
+}
+
+.zip-number-label {
+    grid-area: zip;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-label {
+    grid-area: city;
+    display: flex;
+    flex-direction: column;
+}
+
+.addrss-container input:invalid {
+    border: 2px solid rgba(236, 152, 152, 0.808);
+    border-radius: 16px;
+}
+
+.addrss-container input:valid {
+    border: 2px solid rgba(143, 237, 111, 0.808);
+    border-radius: 16px;
+}
