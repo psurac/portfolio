@@ -15,7 +15,7 @@
     border-radius: 16px;
 }
 
-input[type="text"], input[type="email"], input[type="tel"] {
+.order-container input[type="text"], input[type="email"], input[type="tel"] {
     height: 28px;
     padding: 5px;
     min-width: 220px;
