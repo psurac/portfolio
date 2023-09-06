@@ -60,9 +60,7 @@ function Order() {
                     />
                     <label htmlFor="radio-deliver"> Deliver</label>
                 </div>
-                {addressRequired &&
-                    <Address />
-                }
+                {addressRequired && <Address />}
                 <label className="check-newsletter-label" htmlFor="check-newsletter">
                     <input type="checkbox" id="check-newsletter" name="check-newsletter" ></input>
                     <span className="check-newsletter-text"> I want to get the newsletter with the latet updates.</span>
