@@ -13,7 +13,7 @@ function Order() {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append('card', JSON.stringify(card));
-        alert('Please check your inbox and confirm your Mailing Address');
+        alert('Please check your inbox and confirm your Mailing Address.');
         emptyCard();
         setKey(key + 1);
     };

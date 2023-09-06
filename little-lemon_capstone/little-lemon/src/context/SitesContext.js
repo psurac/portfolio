@@ -38,6 +38,11 @@ export const SitesContextProvider = ({ children }) => {
             name: 'Order',
             path: '/order',
             showInNavBar: false,
+        },
+        {
+            name: 'Register',
+            path: '/register',
+            showInNavBar: false,
         }
     ]
     return (
