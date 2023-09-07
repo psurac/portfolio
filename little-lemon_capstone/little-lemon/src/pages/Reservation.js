@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import Restaurant from '../images/restaurant.jpg';
+import UserInformation from '../components/fragments/UserInformation'
 import './Reservation.css'
 
 function Reservation() {
-    const [datetimeNow, setDatetimeNow] = useState();
-    const [datetimeMax, setDatetimeMax] = useState();
+    const [ key, setKey] = useState(1);
+    const [ datetimeNow, setDatetimeNow ] = useState();
+    const [ datetimeMax, setDatetimeMax ] = useState();
+    const [ userInfo, setUserInfo ] = useState();
+    const [ userShow, setUserShow ] = useState();
 
     useEffect(() => {
         const now = new Date();
@@ -30,16 +34,18 @@ function Reservation() {
         const formData = new FormData(event.target);
         const hours = formData.get('datetime').split('T')[1].split(':')[0];
         if (hours >= 13 && hours < 23) {
-            alert('Please check your Mailbox and confirm!');
-            event.target.submit();
+            setUserInfo('Please check your Mailbox and confirm!');
+            setUserShow(true);
+            setKey(key + 1);
         } else {
-            alert('Opening hours from 1pm to 11pm');
+            setUserInfo('Opening hours from 1pm to 11pm');
+            setUserShow(true);
         }
     };
 
     return (
         <div>
-            <div className="reserveation padd-right-left prim1">
+            <div className="reserveation padd-right-left prim1" key={key}>
                 <h1 className="title">Reserve a Table</h1>
                 <img src={Restaurant} alt="restaurant" className='image' />
                 <form className="reserve" onSubmit={submit} action='/reservation'>
@@ -93,6 +99,7 @@ function Reservation() {
                     />
                 </form>
             </div>
+            <UserInformation info={userInfo} show={userShow} />
         </div>
     );
 };

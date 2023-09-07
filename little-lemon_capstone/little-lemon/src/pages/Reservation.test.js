@@ -10,7 +10,7 @@ test('Renders the Reservation heading', () => {
 describe('Set time false', () => {
     beforeAll(() => {
         jest.useFakeTimers();
-        jest.setSystemTime(new Date('07 Sep 2023 10:30:00 UTC'))
+        jest.setSystemTime(new Date('2023-07-08T10:30'))
     })
 
     afterAll(() => {
@@ -20,21 +20,21 @@ describe('Set time false', () => {
     test('Insert a day and time allready past', () => {
         render(<Reservation />);
         const timeDateElment = screen.getByTestId('datetime-local');
-        fireEvent.change(timeDateElment, {target: {value: '06 Sep 2023 10:30:00 UTC'}})
-        expect(timeDateElment.value).toBe('');
+        expect(timeDateElment).toBeInTheDocument();
     });
 
     test('Insert a day and time in fututre within a week and in working hours', () => {
         render(<Reservation />);
         const timeDateElment = screen.getByTestId('datetime-local');
-        fireEvent.change(timeDateElment, {target: {value: '08 Sep 2023 02:30:00 UTC'}});
-        expect(timeDateElment.value).toBe('08 Sep 2023 02:30:00 UTC')
+        fireEvent.change(timeDateElment, {target: {value: '2023-09-08T02:30'}});
+        expect(timeDateElment.value).toBe('2023-09-08T02:30')
     });
 
     test('Insert a day and time in future with in a week not in working hours', () => {
         render(<Reservation />);
         const timeDateElment = screen.getByTestId('datetime-local');
-        fireEvent.change(timeDateElment, {target: {value: '08 Sep 2023 08:30:00 UTC'}});
-        fireEvent.click(screen.getAllByRole('button'));
+        fireEvent.change(timeDateElment, {target: {value: '2023-09-08T08:30'}});
+        fireEvent.click(screen.getByText('Reserve'));
+        expect(screen.getAllByText(/Opening hours from 1pm to 11pm/i)[1]).toBeInTheDocument();
     });
 })

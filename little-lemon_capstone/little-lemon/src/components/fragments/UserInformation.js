@@ -1,4 +1,4 @@
-export function UserInformation( { info, show = false } ) {
+function UserInformation( { info, show = false } ) {
     return (
         <h2 className="weeksspecial"
         style={{
@@ -6,9 +6,12 @@ export function UserInformation( { info, show = false } ) {
             backgroundColor: 'var(--sec1)',
             color: 'var(--sec4)',
             textAlign: 'center',
-            padding: '10px',
-        }}>
+            padding: show ? '10px' : '',
+        }}
+        role="alert">
             {info}
         </h2>
     );
 };
+
+export default UserInformation;
