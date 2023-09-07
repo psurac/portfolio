@@ -51,7 +51,7 @@ function Reservation() {
                         <option value="engagement">Engagement</option>
                         <option value="anniversary">Anniversary</option>
                     </select>
-                    <div className='date-input'>
+                    <label className="open-hours date-input" htmlFor='datetime'>
                         <input
                             id="datetime"
                             name='datetime'
@@ -61,11 +61,10 @@ function Reservation() {
                             min={datetimeNow}
                             max={datetimeMax}
                             required
+                            data-testid="datetime-local"
                         />
-                        <label className="open-hours" htmlFor='datetime'>
-                            Opening hours from 1pm to 11pm
-                        </label>
-                    </div>
+                        Opening hours from 1pm to 11pm
+                    </label>
                     <input
                         id='number-guests'
                         name='number-guests'
