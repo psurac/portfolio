@@ -37,7 +37,7 @@ function Reservation() {
         const formData = new FormData(event.target);
         const hours = formData.get('datetimeTag').split('T')[1].split(':')[0];
         if (hours >= 13 && hours < 23) {
-            setUserInfo('Please check your Mailbox and confirm!');
+            setUserInfo('Success! Please check your Mailbox and confirm to complet!');
             setUserShow(true);
             setKey(key + 1);
         } else {
