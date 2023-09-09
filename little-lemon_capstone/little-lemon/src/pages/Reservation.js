@@ -5,6 +5,7 @@ import './Reservation.css'
 
 function Reservation() {
     const [ key, setKey] = useState(1);
+    const [ timeUserChoose, setTimeUserChoose ] = useState();
     const [ datetimeNow, setDatetimeNow ] = useState();
     const [ datetimeMax, setDatetimeMax ] = useState();
     const [ userInfo, setUserInfo ] = useState();
@@ -24,15 +25,17 @@ function Reservation() {
             return `${year}-${month}-${day}T${hour}:00`;
         };
 
-        setDatetimeNow(formateDatetime(now));
+        const dateNow = formateDatetime(now);
+        setDatetimeNow(dateNow);
         setDatetimeMax(formateDatetime(max));
+        setTimeUserChoose(dateNow.split('T')[1].split(':')[0]);
     }, []);
 
     const submit = (event) => {
         event.preventDefault();
 
         const formData = new FormData(event.target);
-        const hours = formData.get('datetime').split('T')[1].split(':')[0];
+        const hours = formData.get('datetimeTag').split('T')[1].split(':')[0];
         if (hours >= 13 && hours < 23) {
             setUserInfo('Please check your Mailbox and confirm!');
             setUserShow(true);
@@ -42,6 +45,29 @@ function Reservation() {
             setUserShow(true);
         }
     };
+
+    function dateTimeChangehandler(e) {
+        const datetimeTag = document.getElementById(e.target.id);
+        const datetime = new Date(e.target.value);
+        if (datetime.getMinutes() !== 0) {
+            const year = datetime.getFullYear();
+            const month = ('0' + (datetime.getMonth() + 1)).slice(-2);
+            const day = ('0' + datetime.getDate()).slice(-2);
+            const hour = ('0' + datetime.getHours()).slice(-2);
+
+            datetimeTag.value = `${year}-${month}-${day}T${hour}:00`;
+        }
+        const hours = datetime.getHours();
+        if (hours < 13 || hours >= 23) {
+            setUserInfo('Opening hours from 1pm to 11pm');
+            setUserShow(true);
+            datetimeTag.style.border = '2px red solid'
+        } else {
+            setUserInfo('');
+            setUserShow(false);
+            datetimeTag.style.border = '';
+        }
+    }
 
     return (
         <div>
@@ -62,20 +88,22 @@ function Reservation() {
                             id="datetime"
                             name='datetime'
                             type="datetime-local"
-                            step="1800"
+                            step="3600"
                             defaultValue={datetimeNow}
                             min={datetimeNow}
                             max={datetimeMax}
                             required
                             data-testid="datetime-local"
+                            onChange={(e) => dateTimeChangehandler(e)}
                         />
-                        Opening hours from 1pm to 11pm
+                        Opening hours from 1pm to 11pm, just whole hours are valid.
                     </label>
                     <input
                         id='number-guests'
                         name='number-guests'
                         type='number'
                         placeholder='Number of guests'
+                        max={12}
                         required
                     />
                     <input
