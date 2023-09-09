@@ -23,18 +23,17 @@ describe('Set time false', () => {
         expect(timeDateElment).toBeInTheDocument();
     });
 
-    test('Insert a day and time in fututre within a week and in working hours', () => {
+    test('Insert a day and time in future within a week and in working hours', () => {
         render(<Reservation />);
         const timeDateElment = screen.getByTestId('datetime-local');
-        fireEvent.change(timeDateElment, {target: {value: '2023-09-08T02:30'}});
-        expect(timeDateElment.value).toBe('2023-09-08T02:30')
+        fireEvent.change(timeDateElment, {target: {value: '2023-09-08T02:00'}});
+        expect(timeDateElment.value).toBe('2023-09-08T02:00')
     });
 
     test('Insert a day and time in future with in a week not in working hours', () => {
         render(<Reservation />);
         const timeDateElment = screen.getByTestId('datetime-local');
-        fireEvent.change(timeDateElment, {target: {value: '2023-09-08T08:30'}});
-        fireEvent.click(screen.getByText('Reserve'));
+        fireEvent.change(timeDateElment, {target: {value: '2023-09-08T08:00'}});
         expect(screen.getAllByText(/Opening hours from 1pm to 11pm/i)[1]).toBeInTheDocument();
     });
 })
