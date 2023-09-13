@@ -121,6 +121,8 @@ function Reservation() {
                         required
                     />
                     <input
+                        role='button'
+                        aria-label='On Click'
                         className='lemonButton'
                         type="submit"
                         value="Reserve"

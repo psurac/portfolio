@@ -4,8 +4,8 @@
         "lab": "-",
         "projects": "Scratch",
         "language": "Scratch",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week0.png",
+        "description": "In this very first week there was an introduction to programming it self. To practic it we had to develpo a little prpogram in scratch. I coded a cool Bus driving game."
     },
     {
         "week": 1,
