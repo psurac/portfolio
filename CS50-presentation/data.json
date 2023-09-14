@@ -12,8 +12,8 @@
         "lab": "Population",
         "projects": "Hello, Mario (More), Credit",
         "language": "C",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week1.png",
+        "description": "In Mario (More), I had to code one of this Pyramides that Mario jumped over in the game, several times. While in Credit I coded a validation for creditcards, that outputs if a valid number is given, the credit card company to, like AMAX, Visa and MasterCard."
     },
     {
         "week": 2,
