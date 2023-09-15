@@ -20,8 +20,8 @@
         "lab": "Scrabble",
         "projects": "Readability, Wordle",
         "language": "C",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week2.png",
+        "description": "In Scrable I coded a programm, that counted how much a word would scroe like in Scrable. And compared it to an other word. The programm redability takes a text and give you in which class level this Text would have been written from 0 to level 16+. Worle from CS50 is like the well gnown game where you have to guess a n letter word within n+1 guesses."
     },
     {
         "week": 3,
