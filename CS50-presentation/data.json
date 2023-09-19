@@ -28,8 +28,8 @@
         "lab": "Sort",
         "projects": "Plurality, Tideman",
         "language": "C",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week3.png",
+        "description": "In the lab Sort I have to finde out which sorting Algorythem was used with the help of diverent sorted data Sets. Plurality was coded to simulates a plurality vote as same as Tideman simulates a Tideman vote."
     },
     {
         "week": 4,
