@@ -36,8 +36,8 @@
         "lab": "Volume",
         "projects": "Filter (More), Recover",
         "language": "C",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week4.png",
+        "description": "In the lab Volume I coded a programm to increas or decrease the volume of a .wav file. In Filter (More) diferent kinde of filters can be applied to a given Picture. And Recover was coded to recover JPEGs from forensic images."
     },
     {
         "week": 5,
