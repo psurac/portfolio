@@ -44,8 +44,8 @@
         "lab": "Inheritance",
         "projects": "Speller",
         "language": "C",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week5.png",
+        "description": "The lab Inheritance simulates the the blood types in a family tree. Speller takes a dictionary and look in a given text for all misspelled words and write them in a seperate file."
     },
     {
         "week": 6,
