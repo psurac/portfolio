@@ -52,8 +52,8 @@
         "lab": "World Cup",
         "projects": "Sentimental / Hello, Sentimental / Mario (More), Sentimental / Credit, Sentimental / Readability, DNA",
         "language": "Python",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week6.png",
+        "description": "In this week a new language was introduced Python. With Python a bunch of privious coded programms was coded again, in a shorter time period than before. Additional the lab World Cup was coded an tested on different time of runs. While the accuracy increases the time of running the programm increases too. In DNA a programm was developed that identivys to whom a specific DNA belongs to."
     },
     {
         "week": 7,
