@@ -60,8 +60,8 @@
         "lab": "Songs",
         "projects": "Movies, Fiftyville",
         "language": "SQL",
-        "img": "#",
-        "description": "..."
+        "img": "./assets/week7.png",
+        "description": "This weeks lab was about querieng a database and answering simple questions. In Movies it was the same and than in Fiftyville it gets interesting. The task was to finde the thife of CS50 duck. Diverent tabels of the database has to been joined on differente tags, and at the end the thife was found."
     },
     {
         "week": 8,
