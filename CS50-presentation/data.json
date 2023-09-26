@@ -70,7 +70,7 @@
         "language": "HTML, CSS, Javascript, Bootstrap",
         "img": "#",
         "description": "In Trivia a simple webpage was coded that asks a user some questions and show him or her the answer. Homepage should be a bit more complex and I decided to code this Page here, so I can presentat what I have learened in CS50 and satisfy the given requierements. But the code that I provided is on a view parts differnet to the one here ;-)."
-    }
+    },
     {
         "week": 9,
         "lab": "Birthdays",
@@ -78,5 +78,13 @@
         "language": "Flask, HTML, CSS, Javascript, Bootstrap, SQL",
         "img": "#",
         "description": "In Birthdays, it was about transvering data from the Forntend, to the Backend and to the Database, and all the way back. While in Finance all the same was done, with some extras. The Frontend and Backend is a bit more complex and the Backend not just only comunicate with the database and Frontend, as en extra data is fetched from an external API."
+    },
+    {
+        "week": 10,
+        "lab": "-",
+        "projects": "Final Project",
+        "language": "HTML, CSS, Typescript, Node.js, React",
+        "img": "#",
+        "description": "I decided to make a Web Application namend Fancy CV Maker. Also I decided to make the Backend Node.js with typescript and the Frontend React with typescript. But it is in progress, so happy coding :-)"
     }
 ]
